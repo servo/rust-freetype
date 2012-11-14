@@ -180,6 +180,15 @@ type FT_F2Dot14 = c_short;
 type FT_F26Dot6 = c_long;
 type FT_Fixed = c_long;
 type FT_Error = c_int;
+
+pub trait FTErrorMethods {
+    fn succeeded() -> bool;
+}
+
+pub impl FT_Error : FTErrorMethods {
+    fn succeeded() -> bool { self == 0 as FT_Error }
+}
+
 type FT_Pointer = *c_void;
 type FT_Offset = size_t;
 type FT_PtrDist = ptrdiff_t;
