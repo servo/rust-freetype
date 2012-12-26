@@ -60,6 +60,17 @@ type struct_FT_BBox_ = {
 
 type FT_BBox = struct_FT_BBox_;
 
+type enum_FT_Sfnt_Tag_ = c_uint;
+const ft_sfnt_head: u32 = 0_u32;
+const ft_sfnt_maxp: u32 = 1_u32;
+const ft_sfnt_os2: u32 = 2_u32;
+const ft_sfnt_hhea: u32 = 3_u32;
+const ft_sfnt_vhea: u32 = 4_u32;
+const ft_sfnt_post: u32 = 5_u32;
+const ft_sfnt_pclt: u32 = 6_u32;
+const ft_sfnt_max: u32 = 7_u32;
+type FT_Sfnt_Tag = enum_FT_Sfnt_Tag_;
+
 type enum_FT_Pixel_Mode_ = c_uint;
 const FT_PIXEL_MODE_NONE: u32 = 0_u32;
 const FT_PIXEL_MODE_MONO: u32 = 1_u32;
@@ -331,6 +342,9 @@ type FT_CharMapRec = struct_FT_CharMapRec_;
 
 type struct_FT_Face_InternalRec_ = c_void;
 type FT_Face_Internal = *struct_FT_Face_InternalRec_;
+
+const FT_STYLE_FLAG_ITALIC: FT_Long = (1 << 0);
+const FT_STYLE_FLAG_BOLD: FT_Long = (1 << 1);
 
 type struct_FT_FaceRec_ = {
     num_faces: FT_Long,
@@ -692,4 +706,5 @@ fn FT_Face_CheckTrueTypePatents(++face: FT_Face) -> FT_Bool;
 
 fn FT_Face_SetUnpatentedHinting(++face: FT_Face, ++value: FT_Bool) -> FT_Bool;
 
+fn FT_Get_Sfnt_Table(face: FT_Face, tag: FT_Sfnt_Tag) -> *c_void;
 }
