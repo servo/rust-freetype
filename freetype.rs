@@ -192,11 +192,11 @@ pub type FT_Fixed = c_long;
 pub type FT_Error = c_int;
 
 pub trait FTErrorMethods {
-    fn succeeded() -> bool;
+    fn succeeded(self) -> bool;
 }
 
 pub impl FT_Error : FTErrorMethods {
-    fn succeeded() -> bool { self == 0 as FT_Error }
+    fn succeeded(self) -> bool { self == 0 as FT_Error }
 }
 
 pub type FT_Pointer = *c_void;
