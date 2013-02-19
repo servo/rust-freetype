@@ -192,11 +192,11 @@ pub type FT_Fixed = c_long;
 pub type FT_Error = c_int;
 
 pub trait FTErrorMethods {
-    fn succeeded() -> bool;
+    fn succeeded(self) -> bool;
 }
 
 pub impl FT_Error : FTErrorMethods {
-    fn succeeded() -> bool { self == 0 as FT_Error }
+    fn succeeded(self) -> bool { self == 0 as FT_Error }
 }
 
 pub type FT_Pointer = *c_void;
@@ -342,8 +342,8 @@ pub type FT_CharMapRec = struct_FT_CharMapRec_;
 pub type struct_FT_Face_InternalRec_ = c_void;
 pub type FT_Face_Internal = *struct_FT_Face_InternalRec_;
 
-const FT_STYLE_FLAG_ITALIC: FT_Long = (1 << 0);
-const FT_STYLE_FLAG_BOLD: FT_Long = (1 << 1);
+pub const FT_STYLE_FLAG_ITALIC: FT_Long = (1 << 0);
+pub const FT_STYLE_FLAG_BOLD: FT_Long = (1 << 1);
 
 pub type struct_FT_FaceRec_ = {
     num_faces: FT_Long,
@@ -613,7 +613,7 @@ pub const FT_Err_Corrupted_Font_Glyphs: u32 = 186_u32;
 pub const FT_Err_Max: u32 = 187_u32;
 
 #[link_name="freetype"]
-extern mod bindgen {
+pub extern mod bindgen {
 
 fn FT_Init_FreeType(++alibrary: *FT_Library) -> FT_Error;
 
