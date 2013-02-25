@@ -195,7 +195,7 @@ pub trait FTErrorMethods {
     fn succeeded() -> bool;
 }
 
-pub impl FT_Error : FTErrorMethods {
+pub impl FTErrorMethods for FT_Error {
     fn succeeded() -> bool { self == 0 as FT_Error }
 }
 
