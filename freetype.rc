@@ -6,3 +6,8 @@ extern mod std;
 
 pub mod freetype;
 pub mod tt_os2;
+
+#[nolink]
+#[cfg(target_os = "linux")]
+#[link_args = "-lfreetype"]
+extern mod linkhack_linux { }
