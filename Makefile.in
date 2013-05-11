@@ -1,7 +1,8 @@
 VPATH=%VPATH%
 
-RUSTC ?= rustc
-RUSTFLAGS ?=
+ifeq ($(CFG_OSTYPE),linux-androideabi)
+    RUSTFLAGS += -L./../libfreetype2/.libs
+endif
 
 RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
 
