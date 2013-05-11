@@ -624,95 +624,95 @@ pub static FT_Err_Max: u32 = 187_u32;
 #[link_name="freetype"]
 pub extern mod bindgen {
 
-fn FT_Init_FreeType(++alibrary: *FT_Library) -> FT_Error;
+fn FT_Init_FreeType(alibrary: *FT_Library) -> FT_Error;
 
-fn FT_Done_FreeType(++library: FT_Library) -> FT_Error;
+fn FT_Done_FreeType(library: FT_Library) -> FT_Error;
 
-fn FT_New_Face(++library: FT_Library, ++filepathname: *c_char, ++face_index: FT_Long, ++aface: *FT_Face) -> FT_Error;
+fn FT_New_Face(library: FT_Library, filepathname: *c_char, face_index: FT_Long, aface: *FT_Face) -> FT_Error;
 
-fn FT_New_Memory_Face(++library: FT_Library, ++file_base: *FT_Byte, ++file_size: FT_Long, ++face_index: FT_Long, ++aface: *FT_Face) -> FT_Error;
+fn FT_New_Memory_Face(library: FT_Library, file_base: *FT_Byte, file_size: FT_Long, face_index: FT_Long, aface: *FT_Face) -> FT_Error;
 
-fn FT_Open_Face(++library: FT_Library, ++args: *FT_Open_Args, ++face_index: FT_Long, ++aface: *FT_Face) -> FT_Error;
+fn FT_Open_Face(library: FT_Library, args: *FT_Open_Args, face_index: FT_Long, aface: *FT_Face) -> FT_Error;
 
-fn FT_Attach_File(++face: FT_Face, ++filepathname: *c_char) -> FT_Error;
+fn FT_Attach_File(face: FT_Face, filepathname: *c_char) -> FT_Error;
 
-fn FT_Attach_Stream(++face: FT_Face, ++parameters: *FT_Open_Args) -> FT_Error;
+fn FT_Attach_Stream(face: FT_Face, parameters: *FT_Open_Args) -> FT_Error;
 
-fn FT_Reference_Face(++face: FT_Face) -> FT_Error;
+fn FT_Reference_Face(face: FT_Face) -> FT_Error;
 
-fn FT_Done_Face(++face: FT_Face) -> FT_Error;
+fn FT_Done_Face(face: FT_Face) -> FT_Error;
 
-fn FT_Select_Size(++face: FT_Face, ++strike_index: FT_Int) -> FT_Error;
+fn FT_Select_Size(face: FT_Face, strike_index: FT_Int) -> FT_Error;
 
-fn FT_Request_Size(++face: FT_Face, ++req: FT_Size_Request) -> FT_Error;
+fn FT_Request_Size(face: FT_Face, req: FT_Size_Request) -> FT_Error;
 
-fn FT_Set_Char_Size(++face: FT_Face, ++char_width: FT_F26Dot6, ++char_height: FT_F26Dot6, ++horz_resolution: FT_UInt, ++vert_resolution: FT_UInt) -> FT_Error;
+fn FT_Set_Char_Size(face: FT_Face, char_width: FT_F26Dot6, char_height: FT_F26Dot6, horz_resolution: FT_UInt, vert_resolution: FT_UInt) -> FT_Error;
 
-fn FT_Set_Pixel_Sizes(++face: FT_Face, ++pixel_width: FT_UInt, ++pixel_height: FT_UInt) -> FT_Error;
+fn FT_Set_Pixel_Sizes(face: FT_Face, pixel_width: FT_UInt, pixel_height: FT_UInt) -> FT_Error;
 
-fn FT_Load_Glyph(++face: FT_Face, ++glyph_index: FT_UInt, ++load_flags: FT_Int32) -> FT_Error;
+fn FT_Load_Glyph(face: FT_Face, glyph_index: FT_UInt, load_flags: FT_Int32) -> FT_Error;
 
-fn FT_Load_Char(++face: FT_Face, ++char_code: FT_ULong, ++load_flags: FT_Int32) -> FT_Error;
+fn FT_Load_Char(face: FT_Face, char_code: FT_ULong, load_flags: FT_Int32) -> FT_Error;
 
-fn FT_Set_Transform(++face: FT_Face, ++matrix: *FT_Matrix, ++delta: *FT_Vector);
+fn FT_Set_Transform(face: FT_Face, matrix: *FT_Matrix, delta: *FT_Vector);
 
-fn FT_Render_Glyph(++slot: FT_GlyphSlot, ++render_mode: FT_Render_Mode) -> FT_Error;
+fn FT_Render_Glyph(slot: FT_GlyphSlot, render_mode: FT_Render_Mode) -> FT_Error;
 
-fn FT_Get_Kerning(++face: FT_Face, ++left_glyph: FT_UInt, ++right_glyph: FT_UInt, ++kern_mode: FT_UInt, ++akerning: *FT_Vector) -> FT_Error;
+fn FT_Get_Kerning(face: FT_Face, left_glyph: FT_UInt, right_glyph: FT_UInt, kern_mode: FT_UInt, akerning: *FT_Vector) -> FT_Error;
 
-fn FT_Get_Track_Kerning(++face: FT_Face, ++point_size: FT_Fixed, ++degree: FT_Int, ++akerning: *FT_Fixed) -> FT_Error;
+fn FT_Get_Track_Kerning(face: FT_Face, point_size: FT_Fixed, degree: FT_Int, akerning: *FT_Fixed) -> FT_Error;
 
-fn FT_Get_Glyph_Name(++face: FT_Face, ++glyph_index: FT_UInt, ++buffer: FT_Pointer, ++buffer_max: FT_UInt) -> FT_Error;
+fn FT_Get_Glyph_Name(face: FT_Face, glyph_index: FT_UInt, buffer: FT_Pointer, buffer_max: FT_UInt) -> FT_Error;
 
-fn FT_Get_Postscript_Name(++face: FT_Face) -> *c_char;
+fn FT_Get_Postscript_Name(face: FT_Face) -> *c_char;
 
-fn FT_Select_Charmap(++face: FT_Face, ++encoding: FT_Encoding) -> FT_Error;
+fn FT_Select_Charmap(face: FT_Face, encoding: FT_Encoding) -> FT_Error;
 
-fn FT_Set_Charmap(++face: FT_Face, ++charmap: FT_CharMap) -> FT_Error;
+fn FT_Set_Charmap(face: FT_Face, charmap: FT_CharMap) -> FT_Error;
 
-fn FT_Get_Charmap_Index(++charmap: FT_CharMap) -> FT_Int;
+fn FT_Get_Charmap_Index(charmap: FT_CharMap) -> FT_Int;
 
-fn FT_Get_Char_Index(++face: FT_Face, ++charcode: FT_ULong) -> FT_UInt;
+fn FT_Get_Char_Index(face: FT_Face, charcode: FT_ULong) -> FT_UInt;
 
-fn FT_Get_First_Char(++face: FT_Face, ++agindex: *FT_UInt) -> FT_ULong;
+fn FT_Get_First_Char(face: FT_Face, agindex: *FT_UInt) -> FT_ULong;
 
-fn FT_Get_Next_Char(++face: FT_Face, ++char_code: FT_ULong, ++agindex: *FT_UInt) -> FT_ULong;
+fn FT_Get_Next_Char(face: FT_Face, char_code: FT_ULong, agindex: *FT_UInt) -> FT_ULong;
 
-fn FT_Get_Name_Index(++face: FT_Face, ++glyph_name: *FT_String) -> FT_UInt;
+fn FT_Get_Name_Index(face: FT_Face, glyph_name: *FT_String) -> FT_UInt;
 
-fn FT_Get_SubGlyph_Info(++glyph: FT_GlyphSlot, ++sub_index: FT_UInt, ++p_index: *FT_Int, ++p_flags: *FT_UInt, ++p_arg1: *FT_Int, ++p_arg2: *FT_Int, ++p_transform: *FT_Matrix) -> FT_Error;
+fn FT_Get_SubGlyph_Info(glyph: FT_GlyphSlot, sub_index: FT_UInt, p_index: *FT_Int, p_flags: *FT_UInt, p_arg1: *FT_Int, p_arg2: *FT_Int, p_transform: *FT_Matrix) -> FT_Error;
 
-fn FT_Get_FSType_Flags(++face: FT_Face) -> FT_UShort;
+fn FT_Get_FSType_Flags(face: FT_Face) -> FT_UShort;
 
-fn FT_Face_GetCharVariantIndex(++face: FT_Face, ++charcode: FT_ULong, ++variantSelector: FT_ULong) -> FT_UInt;
+fn FT_Face_GetCharVariantIndex(face: FT_Face, charcode: FT_ULong, variantSelector: FT_ULong) -> FT_UInt;
 
-fn FT_Face_GetCharVariantIsDefault(++face: FT_Face, ++charcode: FT_ULong, ++variantSelector: FT_ULong) -> FT_Int;
+fn FT_Face_GetCharVariantIsDefault(face: FT_Face, charcode: FT_ULong, variantSelector: FT_ULong) -> FT_Int;
 
-fn FT_Face_GetVariantSelectors(++face: FT_Face) -> *FT_UInt32;
+fn FT_Face_GetVariantSelectors(face: FT_Face) -> *FT_UInt32;
 
-fn FT_Face_GetVariantsOfChar(++face: FT_Face, ++charcode: FT_ULong) -> *FT_UInt32;
+fn FT_Face_GetVariantsOfChar(face: FT_Face, charcode: FT_ULong) -> *FT_UInt32;
 
-fn FT_Face_GetCharsOfVariant(++face: FT_Face, ++variantSelector: FT_ULong) -> *FT_UInt32;
+fn FT_Face_GetCharsOfVariant(face: FT_Face, variantSelector: FT_ULong) -> *FT_UInt32;
 
-fn FT_MulDiv(++a: FT_Long, ++b: FT_Long, ++c: FT_Long) -> FT_Long;
+fn FT_MulDiv(a: FT_Long, b: FT_Long, c: FT_Long) -> FT_Long;
 
-fn FT_MulFix(++a: FT_Long, ++b: FT_Long) -> FT_Long;
+fn FT_MulFix(a: FT_Long, b: FT_Long) -> FT_Long;
 
-fn FT_DivFix(++a: FT_Long, ++b: FT_Long) -> FT_Long;
+fn FT_DivFix(a: FT_Long, b: FT_Long) -> FT_Long;
 
-fn FT_RoundFix(++a: FT_Fixed) -> FT_Fixed;
+fn FT_RoundFix(a: FT_Fixed) -> FT_Fixed;
 
-fn FT_CeilFix(++a: FT_Fixed) -> FT_Fixed;
+fn FT_CeilFix(a: FT_Fixed) -> FT_Fixed;
 
-fn FT_FloorFix(++a: FT_Fixed) -> FT_Fixed;
+fn FT_FloorFix(a: FT_Fixed) -> FT_Fixed;
 
-fn FT_Vector_Transform(++vec: *FT_Vector, ++matrix: *FT_Matrix);
+fn FT_Vector_Transform(vec: *FT_Vector, matrix: *FT_Matrix);
 
-fn FT_Library_Version(++library: FT_Library, ++amajor: *FT_Int, ++aminor: *FT_Int, ++apatch: *FT_Int);
+fn FT_Library_Version(library: FT_Library, amajor: *FT_Int, aminor: *FT_Int, apatch: *FT_Int);
 
-fn FT_Face_CheckTrueTypePatents(++face: FT_Face) -> FT_Bool;
+fn FT_Face_CheckTrueTypePatents(face: FT_Face) -> FT_Bool;
 
-fn FT_Face_SetUnpatentedHinting(++face: FT_Face, ++value: FT_Bool) -> FT_Bool;
+fn FT_Face_SetUnpatentedHinting(face: FT_Face, value: FT_Bool) -> FT_Bool;
 
 fn FT_Get_Sfnt_Table(face: FT_Face, tag: FT_Sfnt_Tag) -> *c_void;
 }
