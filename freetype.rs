@@ -628,11 +628,11 @@ fn FT_Init_FreeType(alibrary: *FT_Library) -> FT_Error;
 
 fn FT_Done_FreeType(library: FT_Library) -> FT_Error;
 
-fn FT_New_Face(library: FT_Library, filepathname: *c_char, face_index: FT_Long, aface: *FT_Face) -> FT_Error;
+fn FT_New_Face(library: FT_Library, filepathname: *c_char, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
-fn FT_New_Memory_Face(library: FT_Library, file_base: *FT_Byte, file_size: FT_Long, face_index: FT_Long, aface: *FT_Face) -> FT_Error;
+fn FT_New_Memory_Face(library: FT_Library, file_base: *FT_Byte, file_size: FT_Long, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
-fn FT_Open_Face(library: FT_Library, args: *FT_Open_Args, face_index: FT_Long, aface: *FT_Face) -> FT_Error;
+fn FT_Open_Face(library: FT_Library, args: *FT_Open_Args, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
 fn FT_Attach_File(face: FT_Face, filepathname: *c_char) -> FT_Error;
 
