@@ -11,7 +11,7 @@
 // except for FT_New_Face, FT_New_Memory_Face, and FT_Open_Face which are hand
 // modified to take `*mut`s.
 
-use core::libc::*;
+use std::libc::*;
 
 pub type FT_Int16 = c_short;
 pub type FT_UInt16 = c_ushort;
@@ -624,7 +624,7 @@ pub static FT_Err_Corrupted_Font_Glyphs: u32 = 186_u32;
 pub static FT_Err_Max: u32 = 187_u32;
 
 #[link_name="freetype"]
-pub extern mod bindgen {
+extern {
 
 fn FT_Init_FreeType(alibrary: *FT_Library) -> FT_Error;
 
