@@ -11,6 +11,8 @@
 // except for FT_New_Face, FT_New_Memory_Face, and FT_Open_Face which are hand
 // modified to take `*mut`s.
 
+#[allow(non_uppercase_statics)];
+
 use std::libc::*;
 
 pub type FT_Int16 = c_short;
