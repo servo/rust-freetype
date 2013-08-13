@@ -18,5 +18,6 @@ pub mod tt_os2;
 
 #[nolink]
 #[cfg(target_os = "linux")]
+#[cfg(target_os = "android")]
 #[link_args = "-lfreetype"]
 extern { }
