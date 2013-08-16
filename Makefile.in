@@ -17,7 +17,7 @@ librustfreetype.dummy: freetype.rc $(RUST_SRC)
 	touch $@
 
 rustfreetype-test: freetype.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< --out-dir . --test
+	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
 
 check: rustfreetype-test
 	./rustfreetype-test
