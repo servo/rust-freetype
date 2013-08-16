@@ -13,11 +13,11 @@ RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
 all:	librustfreetype.dummy
 
 librustfreetype.dummy: freetype.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< -o $@
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
 	touch $@
 
 rustfreetype-test: freetype.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir . --test
 
 check: rustfreetype-test
 	./rustfreetype-test
