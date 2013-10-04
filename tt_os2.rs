@@ -9,7 +9,7 @@
 
 use freetype::{FT_UShort, FT_Short, FT_ULong, FT_Byte};
 
-struct TT_OS2 {
+pub struct TT_OS2 {
     version: FT_UShort,
     xAvgCharWidth: FT_Short,
     usWeightClass: FT_UShort,
