@@ -7,9 +7,8 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#[link(name = "freetype",
-       vers = "0.1")];
 #[crate_type = "lib"];
+#[create_id = "freetype#0.1"];
 
 #[feature(globs)];
 
@@ -21,5 +20,5 @@ pub mod tt_os2;
 #[nolink]
 #[cfg(target_os = "linux")]
 #[cfg(target_os = "android")]
-#[link_args = "-lfreetype"]
+#[link(name = "freetype")]
 extern { }
