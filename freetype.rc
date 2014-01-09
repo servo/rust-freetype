@@ -7,8 +7,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#[link(name = "freetype",
-       vers = "0.1")];
+#[crate_id = "github.com/mozilla-servo/rust-freetype#freetype:0.1"];
 #[crate_type = "lib"];
 
 #[feature(globs)];
@@ -17,9 +16,3 @@ extern mod std;
 
 pub mod freetype;
 pub mod tt_os2;
-
-#[nolink]
-#[cfg(target_os = "linux")]
-#[cfg(target_os = "android")]
-#[link_args = "-lfreetype"]
-extern { }
