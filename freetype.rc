@@ -12,7 +12,7 @@
 
 #[feature(globs)];
 
-extern mod std;
+extern crate std;
 
 pub mod freetype;
 pub mod tt_os2;
