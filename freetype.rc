@@ -15,6 +15,7 @@
 #[feature(globs)];
 
 extern crate std;
+extern crate libc;
 
 pub mod freetype;
 pub mod tt_os2;
