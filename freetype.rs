@@ -7,10 +7,10 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#[allow(non_camel_case_types)];
-#[allow(non_uppercase_statics)];
+#![allow(non_camel_case_types)]
+#![allow(non_uppercase_statics)]
 
-use std::libc::*;
+use libc::*;
 
 pub type FT_Int16 = c_short;
 pub type FT_UInt16 = c_ushort;
