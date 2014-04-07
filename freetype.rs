@@ -408,10 +408,10 @@ pub struct struct_FT_Size_Metrics_ {
 pub type FT_Size_Metrics = struct_FT_Size_Metrics_;
 
 pub struct struct_FT_SizeRec_ {
-    face: *c_void /* FT_Face */,
-    generic: FT_Generic,
-    metrics: FT_Size_Metrics,
-    internal: *c_void /* FT_Size_Internal */,
+    pub face: *c_void /* FT_Face */,
+    pub generic: FT_Generic,
+    pub metrics: FT_Size_Metrics,
+    pub internal: *c_void /* FT_Size_Internal */,
 }
 
 pub type FT_SizeRec = struct_FT_SizeRec_;
