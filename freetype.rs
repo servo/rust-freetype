@@ -54,8 +54,8 @@ pub type FT_StreamRec = struct_FT_StreamRec_;
 pub type FT_Pos = c_long;
 
 pub struct struct_FT_Vector_ {
-    x: FT_Pos,
-    y: FT_Pos,
+    pub x: FT_Pos,
+    pub y: FT_Pos,
 }
 
 pub type FT_Vector = struct_FT_Vector_;
