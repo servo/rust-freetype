@@ -255,8 +255,8 @@ pub struct struct_FT_ListNodeRec_ {
 pub type FT_ListNodeRec = struct_FT_ListNodeRec_;
 
 pub struct struct_FT_ListRec_ {
-    head: *c_void /* FT_ListNode */,
-    tail: *c_void /* FT_ListNode */,
+    pub head: *c_void /* FT_ListNode */,
+    pub tail: *c_void /* FT_ListNode */,
 }
 
 pub type FT_ListRec = struct_FT_ListRec_;
