@@ -262,14 +262,14 @@ pub struct struct_FT_ListRec_ {
 pub type FT_ListRec = struct_FT_ListRec_;
 
 pub struct struct_FT_Glyph_Metrics_ {
-    width: FT_Pos,
-    height: FT_Pos,
-    horiBearingX: FT_Pos,
-    horiBearingY: FT_Pos,
-    horiAdvance: FT_Pos,
-    vertBearingX: FT_Pos,
-    vertBearingY: FT_Pos,
-    vertAdvance: FT_Pos,
+    pub width: FT_Pos,
+    pub height: FT_Pos,
+    pub horiBearingX: FT_Pos,
+    pub horiBearingY: FT_Pos,
+    pub horiAdvance: FT_Pos,
+    pub vertBearingX: FT_Pos,
+    pub vertBearingY: FT_Pos,
+    pub vertAdvance: FT_Pos,
 }
 
 pub type FT_Glyph_Metrics = struct_FT_Glyph_Metrics_;
