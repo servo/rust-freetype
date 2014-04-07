@@ -480,11 +480,11 @@ pub static FT_SIZE_REQUEST_TYPE_MAX: u32 = 5_u32;
 pub type FT_Size_Request_Type = enum_FT_Size_Request_Type_;
 
 pub struct struct_FT_Size_RequestRec_ {
-    _type: FT_Size_Request_Type,
-    width: FT_Long,
-    height: FT_Long,
-    horiResolution: FT_UInt,
-    vertResolution: FT_UInt,
+    pub _type: FT_Size_Request_Type,
+    pub width: FT_Long,
+    pub height: FT_Long,
+    pub horiResolution: FT_UInt,
+    pub vertResolution: FT_UInt,
 }
 
 pub type FT_Size_RequestRec = struct_FT_Size_RequestRec_;
