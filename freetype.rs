@@ -121,12 +121,12 @@ pub type FT_Outline_ConicToFunc = *u8;
 pub type FT_Outline_CubicToFunc = *u8;
 
 pub struct struct_FT_Outline_Funcs_ {
-    move_to: FT_Outline_MoveToFunc,
-    line_to: FT_Outline_LineToFunc,
-    conic_to: FT_Outline_ConicToFunc,
-    cubic_to: FT_Outline_CubicToFunc,
-    shift: c_int,
-    delta: FT_Pos,
+    pub move_to: FT_Outline_MoveToFunc,
+    pub line_to: FT_Outline_LineToFunc,
+    pub conic_to: FT_Outline_ConicToFunc,
+    pub cubic_to: FT_Outline_CubicToFunc,
+    pub shift: c_int,
+    pub delta: FT_Pos,
 }
 
 pub type FT_Outline_Funcs = struct_FT_Outline_Funcs_;
