@@ -173,12 +173,12 @@ pub type FT_Raster_SetModeFunc = *u8;
 pub type FT_Raster_RenderFunc = *u8;
 
 pub struct struct_FT_Raster_Funcs_ {
-    glyph_format: FT_Glyph_Format,
-    raster_new: FT_Raster_NewFunc,
-    raster_reset: FT_Raster_ResetFunc,
-    raster_set_mode: FT_Raster_SetModeFunc,
-    raster_render: FT_Raster_RenderFunc,
-    raster_done: FT_Raster_DoneFunc,
+    pub glyph_format: FT_Glyph_Format,
+    pub raster_new: FT_Raster_NewFunc,
+    pub raster_reset: FT_Raster_ResetFunc,
+    pub raster_set_mode: FT_Raster_SetModeFunc,
+    pub raster_render: FT_Raster_RenderFunc,
+    pub raster_done: FT_Raster_DoneFunc,
 }
 
 pub type FT_Raster_Funcs = struct_FT_Raster_Funcs_;
