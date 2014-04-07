@@ -230,8 +230,8 @@ pub struct struct_FT_Matrix_ {
 pub type FT_Matrix = struct_FT_Matrix_;
 
 pub struct struct_FT_Data_ {
-    pointer: *FT_Byte,
-    length: FT_Int,
+    pub pointer: *FT_Byte,
+    pub length: FT_Int,
 }
 
 pub type FT_Data = struct_FT_Data_;
