@@ -214,8 +214,8 @@ pub type FT_Offset = size_t;
 pub type FT_PtrDist = ptrdiff_t;
 
 pub struct struct_FT_UnitVector_ {
-    x: FT_F2Dot14,
-    y: FT_F2Dot14,
+    pub x: FT_F2Dot14,
+    pub y: FT_F2Dot14,
 }
 
 pub type FT_UnitVector = struct_FT_UnitVector_;
