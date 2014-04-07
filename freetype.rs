@@ -25,10 +25,10 @@ pub type FT_Free_Func = *u8;
 pub type FT_Realloc_Func = *u8;
 
 pub struct struct_FT_MemoryRec_ {
-    user: *c_void,
-    alloc: FT_Alloc_Func,
-    free: FT_Free_Func,
-    realloc: FT_Realloc_Func,
+    pub user: *c_void,
+    pub alloc: FT_Alloc_Func,
+    pub free: FT_Free_Func,
+    pub realloc: FT_Realloc_Func,
 }
 
 pub type FT_Stream = *struct_FT_StreamRec_;
@@ -38,33 +38,33 @@ pub type FT_Stream_IoFunc = *u8;
 pub type FT_Stream_CloseFunc = *u8;
 
 pub struct struct_FT_StreamRec_ {
-    base: *c_uchar,
-    size: c_ulong,
-    pos: c_ulong,
-    descriptor: FT_StreamDesc,
-    pathname: FT_StreamDesc,
-    read: FT_Stream_IoFunc,
-    close: FT_Stream_CloseFunc,
-    memory: *c_void /* FT_Memory */,
-    cursor: *c_uchar,
-    limit: *c_uchar,
+    pub base: *c_uchar,
+    pub size: c_ulong,
+    pub pos: c_ulong,
+    pub descriptor: FT_StreamDesc,
+    pub pathname: FT_StreamDesc,
+    pub read: FT_Stream_IoFunc,
+    pub close: FT_Stream_CloseFunc,
+    pub memory: *c_void /* FT_Memory */,
+    pub cursor: *c_uchar,
+    pub limit: *c_uchar,
 }
 
 pub type FT_StreamRec = struct_FT_StreamRec_;
 pub type FT_Pos = c_long;
 
 pub struct struct_FT_Vector_ {
-    x: FT_Pos,
-    y: FT_Pos,
+    pub x: FT_Pos,
+    pub y: FT_Pos,
 }
 
 pub type FT_Vector = struct_FT_Vector_;
 
 pub struct struct_FT_BBox_ {
-    xMin: FT_Pos,
-    yMin: FT_Pos,
-    xMax: FT_Pos,
-    yMax: FT_Pos,
+    pub xMin: FT_Pos,
+    pub yMin: FT_Pos,
+    pub xMax: FT_Pos,
+    pub yMax: FT_Pos,
 }
 
 pub type FT_BBox = struct_FT_BBox_;
@@ -93,25 +93,25 @@ pub static FT_PIXEL_MODE_MAX: u32 = 7_u32;
 pub type FT_Pixel_Mode = enum_FT_Pixel_Mode_;
 
 pub struct struct_FT_Bitmap_ {
-    rows: c_int,
-    width: c_int,
-    pitch: c_int,
-    buffer: *c_uchar,
-    num_grays: c_short,
-    pixel_mode: c_char,
-    palette_mode: c_char,
-    palette: *c_void,
+    pub rows: c_int,
+    pub width: c_int,
+    pub pitch: c_int,
+    pub buffer: *c_uchar,
+    pub num_grays: c_short,
+    pub pixel_mode: c_char,
+    pub palette_mode: c_char,
+    pub palette: *c_void,
 }
 
 pub type FT_Bitmap = struct_FT_Bitmap_;
 
 pub struct struct_FT_Outline_ {
-    n_contours: c_short,
-    n_points: c_short,
-    points: *FT_Vector,
-    tags: *c_char,
-    contours: *c_short,
-    flags: c_int,
+    pub n_contours: c_short,
+    pub n_points: c_short,
+    pub points: *FT_Vector,
+    pub tags: *c_char,
+    pub contours: *c_short,
+    pub flags: c_int,
 }
 
 pub type FT_Outline = struct_FT_Outline_;
@@ -121,12 +121,12 @@ pub type FT_Outline_ConicToFunc = *u8;
 pub type FT_Outline_CubicToFunc = *u8;
 
 pub struct struct_FT_Outline_Funcs_ {
-    move_to: FT_Outline_MoveToFunc,
-    line_to: FT_Outline_LineToFunc,
-    conic_to: FT_Outline_ConicToFunc,
-    cubic_to: FT_Outline_CubicToFunc,
-    shift: c_int,
-    delta: FT_Pos,
+    pub move_to: FT_Outline_MoveToFunc,
+    pub line_to: FT_Outline_LineToFunc,
+    pub conic_to: FT_Outline_ConicToFunc,
+    pub cubic_to: FT_Outline_CubicToFunc,
+    pub shift: c_int,
+    pub delta: FT_Pos,
 }
 
 pub type FT_Outline_Funcs = struct_FT_Outline_Funcs_;
@@ -143,9 +143,9 @@ pub type struct_FT_RasterRec_ = c_void;
 pub type FT_Raster = *struct_FT_RasterRec_;
 
 pub struct struct_FT_Span_ {
-    x: c_short,
-    len: c_ushort,
-    coverage: c_uchar,
+    pub x: c_short,
+    pub len: c_ushort,
+    pub coverage: c_uchar,
 }
 
 pub type FT_Span = struct_FT_Span_;
@@ -154,15 +154,15 @@ pub type FT_Raster_BitTest_Func = *u8;
 pub type FT_Raster_BitSet_Func = *u8;
 
 pub struct struct_FT_Raster_Params_ {
-    target: *FT_Bitmap,
-    source: *c_void,
-    flags: c_int,
-    gray_spans: FT_SpanFunc,
-    black_spans: FT_SpanFunc,
-    bit_test: FT_Raster_BitTest_Func,
-    bit_set: FT_Raster_BitSet_Func,
-    user: *c_void,
-    clip_box: FT_BBox,
+    pub target: *FT_Bitmap,
+    pub source: *c_void,
+    pub flags: c_int,
+    pub gray_spans: FT_SpanFunc,
+    pub black_spans: FT_SpanFunc,
+    pub bit_test: FT_Raster_BitTest_Func,
+    pub bit_set: FT_Raster_BitSet_Func,
+    pub user: *c_void,
+    pub clip_box: FT_BBox,
 }
 
 pub type FT_Raster_Params = struct_FT_Raster_Params_;
@@ -173,12 +173,12 @@ pub type FT_Raster_SetModeFunc = *u8;
 pub type FT_Raster_RenderFunc = *u8;
 
 pub struct struct_FT_Raster_Funcs_ {
-    glyph_format: FT_Glyph_Format,
-    raster_new: FT_Raster_NewFunc,
-    raster_reset: FT_Raster_ResetFunc,
-    raster_set_mode: FT_Raster_SetModeFunc,
-    raster_render: FT_Raster_RenderFunc,
-    raster_done: FT_Raster_DoneFunc,
+    pub glyph_format: FT_Glyph_Format,
+    pub raster_new: FT_Raster_NewFunc,
+    pub raster_reset: FT_Raster_ResetFunc,
+    pub raster_set_mode: FT_Raster_SetModeFunc,
+    pub raster_render: FT_Raster_RenderFunc,
+    pub raster_done: FT_Raster_DoneFunc,
 }
 
 pub type FT_Raster_Funcs = struct_FT_Raster_Funcs_;
@@ -214,32 +214,32 @@ pub type FT_Offset = size_t;
 pub type FT_PtrDist = ptrdiff_t;
 
 pub struct struct_FT_UnitVector_ {
-    x: FT_F2Dot14,
-    y: FT_F2Dot14,
+    pub x: FT_F2Dot14,
+    pub y: FT_F2Dot14,
 }
 
 pub type FT_UnitVector = struct_FT_UnitVector_;
 
 pub struct struct_FT_Matrix_ {
-    xx: FT_Fixed,
-    xy: FT_Fixed,
-    yx: FT_Fixed,
-    yy: FT_Fixed,
+    pub xx: FT_Fixed,
+    pub xy: FT_Fixed,
+    pub yx: FT_Fixed,
+    pub yy: FT_Fixed,
 }
 
 pub type FT_Matrix = struct_FT_Matrix_;
 
 pub struct struct_FT_Data_ {
-    pointer: *FT_Byte,
-    length: FT_Int,
+    pub pointer: *FT_Byte,
+    pub length: FT_Int,
 }
 
 pub type FT_Data = struct_FT_Data_;
 pub type FT_Generic_Finalizer = *u8;
 
 pub struct struct_FT_Generic_ {
-    data: *c_void,
-    finalizer: FT_Generic_Finalizer,
+    pub data: *c_void,
+    pub finalizer: FT_Generic_Finalizer,
 }
 
 pub type FT_Generic = struct_FT_Generic_;
@@ -247,39 +247,39 @@ pub type FT_ListNode = *struct_FT_ListNodeRec_;
 pub type FT_List = *struct_FT_ListRec_;
 
 pub struct struct_FT_ListNodeRec_ {
-    prev: *c_void /* FT_ListNode */,
-    next: *c_void /* FT_ListNode */,
-    data: *c_void,
+    pub prev: *c_void /* FT_ListNode */,
+    pub next: *c_void /* FT_ListNode */,
+    pub data: *c_void,
 }
 
 pub type FT_ListNodeRec = struct_FT_ListNodeRec_;
 
 pub struct struct_FT_ListRec_ {
-    head: *c_void /* FT_ListNode */,
-    tail: *c_void /* FT_ListNode */,
+    pub head: *c_void /* FT_ListNode */,
+    pub tail: *c_void /* FT_ListNode */,
 }
 
 pub type FT_ListRec = struct_FT_ListRec_;
 
 pub struct struct_FT_Glyph_Metrics_ {
-    width: FT_Pos,
-    height: FT_Pos,
-    horiBearingX: FT_Pos,
-    horiBearingY: FT_Pos,
-    horiAdvance: FT_Pos,
-    vertBearingX: FT_Pos,
-    vertBearingY: FT_Pos,
-    vertAdvance: FT_Pos,
+    pub width: FT_Pos,
+    pub height: FT_Pos,
+    pub horiBearingX: FT_Pos,
+    pub horiBearingY: FT_Pos,
+    pub horiAdvance: FT_Pos,
+    pub vertBearingX: FT_Pos,
+    pub vertBearingY: FT_Pos,
+    pub vertAdvance: FT_Pos,
 }
 
 pub type FT_Glyph_Metrics = struct_FT_Glyph_Metrics_;
 
 pub struct struct_FT_Bitmap_Size_ {
-    height: FT_Short,
-    width: FT_Short,
-    size: FT_Pos,
-    x_ppem: FT_Pos,
-    y_ppem: FT_Pos,
+    pub height: FT_Short,
+    pub width: FT_Short,
+    pub size: FT_Pos,
+    pub x_ppem: FT_Pos,
+    pub y_ppem: FT_Pos,
 }
 
 pub type FT_Bitmap_Size = struct_FT_Bitmap_Size_;
@@ -341,10 +341,10 @@ pub static FT_LOAD_NO_AUTOHINT: u32 = (0x1 << 15) as u32;
 pub type FT_Encoding = enum_FT_Encoding_;
 
 pub struct struct_FT_CharMapRec_ {
-    face: *c_void /* FT_Face */,
-    encoding: FT_Encoding,
-    platform_id: FT_UShort,
-    encoding_id: FT_UShort,
+    pub face: *c_void /* FT_Face */,
+    pub encoding: FT_Encoding,
+    pub platform_id: FT_UShort,
+    pub encoding_id: FT_UShort,
 }
 
 pub type FT_CharMapRec = struct_FT_CharMapRec_;
@@ -356,37 +356,37 @@ pub static FT_STYLE_FLAG_ITALIC: FT_Long = (1 << 0);
 pub static FT_STYLE_FLAG_BOLD: FT_Long = (1 << 1);
 
 pub struct struct_FT_FaceRec_ {
-    num_faces: FT_Long,
-    face_index: FT_Long,
-    face_flags: FT_Long,
+    pub num_faces: FT_Long,
+    pub face_index: FT_Long,
+    pub face_flags: FT_Long,
     pub style_flags: FT_Long,
-    num_glyphs: FT_Long,
+    pub num_glyphs: FT_Long,
     pub family_name: *FT_String,
-    style_name: *FT_String,
-    num_fixed_sizes: FT_Int,
-    available_sizes: *FT_Bitmap_Size,
-    num_charmaps: FT_Int,
-    charmaps: **c_void /* FT_CharMap */,
-    generic: FT_Generic,
-    bbox: FT_BBox,
-    units_per_EM: FT_UShort,
-    ascender: FT_Short,
-    descender: FT_Short,
-    height: FT_Short,
-    max_advance_width: FT_Short,
-    max_advance_height: FT_Short,
-    underline_position: FT_Short,
-    underline_thickness: FT_Short,
-    glyph: *c_void /* FT_GlyphSlot */,
-    size: *c_void /* FT_Size */,
-    charmap: *c_void /* FT_CharMap */,
-    driver: *c_void /* FT_Driver */,
-    memory: *c_void /* FT_Memory */,
-    stream: *c_void /* FT_Stream */,
-    sizes_list: FT_ListRec,
-    autohint: FT_Generic,
-    extensions: *c_void,
-    internal: *c_void /* FT_Face_Internal */,
+    pub style_name: *FT_String,
+    pub num_fixed_sizes: FT_Int,
+    pub available_sizes: *FT_Bitmap_Size,
+    pub num_charmaps: FT_Int,
+    pub charmaps: **c_void /* FT_CharMap */,
+    pub generic: FT_Generic,
+    pub bbox: FT_BBox,
+    pub units_per_EM: FT_UShort,
+    pub ascender: FT_Short,
+    pub descender: FT_Short,
+    pub height: FT_Short,
+    pub max_advance_width: FT_Short,
+    pub max_advance_height: FT_Short,
+    pub underline_position: FT_Short,
+    pub underline_thickness: FT_Short,
+    pub glyph: *c_void /* FT_GlyphSlot */,
+    pub size: *c_void /* FT_Size */,
+    pub charmap: *c_void /* FT_CharMap */,
+    pub driver: *c_void /* FT_Driver */,
+    pub memory: *c_void /* FT_Memory */,
+    pub stream: *c_void /* FT_Stream */,
+    pub sizes_list: FT_ListRec,
+    pub autohint: FT_Generic,
+    pub extensions: *c_void,
+    pub internal: *c_void /* FT_Face_Internal */,
 }
 
 pub type FT_FaceRec = struct_FT_FaceRec_;
@@ -395,23 +395,23 @@ pub type struct_FT_Size_InternalRec_ = c_void;
 pub type FT_Size_Internal = *struct_FT_Size_InternalRec_;
 
 pub struct struct_FT_Size_Metrics_ {
-    x_ppem: FT_UShort,
-    y_ppem: FT_UShort,
-    x_scale: FT_Fixed,
-    y_scale: FT_Fixed,
-    ascender: FT_Pos,
-    descender: FT_Pos,
-    height: FT_Pos,
-    max_advance: FT_Pos,
+    pub x_ppem: FT_UShort,
+    pub y_ppem: FT_UShort,
+    pub x_scale: FT_Fixed,
+    pub y_scale: FT_Fixed,
+    pub ascender: FT_Pos,
+    pub descender: FT_Pos,
+    pub height: FT_Pos,
+    pub max_advance: FT_Pos,
 }
 
 pub type FT_Size_Metrics = struct_FT_Size_Metrics_;
 
 pub struct struct_FT_SizeRec_ {
-    face: *c_void /* FT_Face */,
-    generic: FT_Generic,
-    metrics: FT_Size_Metrics,
-    internal: *c_void /* FT_Size_Internal */,
+    pub face: *c_void /* FT_Face */,
+    pub generic: FT_Generic,
+    pub metrics: FT_Size_Metrics,
+    pub internal: *c_void /* FT_Size_Internal */,
 }
 
 pub type FT_SizeRec = struct_FT_SizeRec_;
@@ -423,48 +423,48 @@ pub type struct_FT_Slot_InternalRec_ = c_void;
 pub type FT_Slot_Internal = *struct_FT_Slot_InternalRec_;
 
 pub struct struct_FT_GlyphSlotRec_ {
-    library: *c_void /* FT_Library */,
-    face: *c_void /* FT_Face */,
-    next: *c_void /* FT_GlyphSlot */,
-    reserved: FT_UInt,
-    generic: FT_Generic,
-    metrics: FT_Glyph_Metrics,
-    linearHoriAdvance: FT_Fixed,
-    linearVertAdvance: FT_Fixed,
-    advance: FT_Vector,
-    format: FT_Glyph_Format,
-    bitmap: FT_Bitmap,
-    bitmap_left: FT_Int,
-    bitmap_top: FT_Int,
-    outline: FT_Outline,
-    num_subglyphs: FT_UInt,
-    subglyphs: *c_void /* FT_SubGlyph */,
-    control_data: *c_void,
-    control_len: c_long,
-    lsb_delta: FT_Pos,
-    rsb_delta: FT_Pos,
-    other: *c_void,
-    internal: *c_void /* FT_Slot_Internal */,
+    pub library: *c_void /* FT_Library */,
+    pub face: *c_void /* FT_Face */,
+    pub next: *c_void /* FT_GlyphSlot */,
+    pub reserved: FT_UInt,
+    pub generic: FT_Generic,
+    pub metrics: FT_Glyph_Metrics,
+    pub linearHoriAdvance: FT_Fixed,
+    pub linearVertAdvance: FT_Fixed,
+    pub advance: FT_Vector,
+    pub format: FT_Glyph_Format,
+    pub bitmap: FT_Bitmap,
+    pub bitmap_left: FT_Int,
+    pub bitmap_top: FT_Int,
+    pub outline: FT_Outline,
+    pub num_subglyphs: FT_UInt,
+    pub subglyphs: *c_void /* FT_SubGlyph */,
+    pub control_data: *c_void,
+    pub control_len: c_long,
+    pub lsb_delta: FT_Pos,
+    pub rsb_delta: FT_Pos,
+    pub other: *c_void,
+    pub internal: *c_void /* FT_Slot_Internal */,
 }
 
 pub type FT_GlyphSlotRec = struct_FT_GlyphSlotRec_;
 
 pub struct struct_FT_Parameter_ {
-    tag: FT_ULong,
-    data: FT_Pointer,
+    pub tag: FT_ULong,
+    pub data: FT_Pointer,
 }
 
 pub type FT_Parameter = struct_FT_Parameter_;
 
 pub struct struct_FT_Open_Args_ {
-    flags: FT_UInt,
-    memory_base: *FT_Byte,
-    memory_size: FT_Long,
-    pathname: *FT_String,
-    stream: *c_void /* FT_Stream */,
-    driver: *c_void /* FT_Module */,
-    num_params: FT_Int,
-    params: *FT_Parameter,
+    pub flags: FT_UInt,
+    pub memory_base: *FT_Byte,
+    pub memory_size: FT_Long,
+    pub pathname: *FT_String,
+    pub stream: *c_void /* FT_Stream */,
+    pub driver: *c_void /* FT_Module */,
+    pub num_params: FT_Int,
+    pub params: *FT_Parameter,
 }
 
 pub type FT_Open_Args = struct_FT_Open_Args_;
@@ -480,11 +480,11 @@ pub static FT_SIZE_REQUEST_TYPE_MAX: u32 = 5_u32;
 pub type FT_Size_Request_Type = enum_FT_Size_Request_Type_;
 
 pub struct struct_FT_Size_RequestRec_ {
-    _type: FT_Size_Request_Type,
-    width: FT_Long,
-    height: FT_Long,
-    horiResolution: FT_UInt,
-    vertResolution: FT_UInt,
+    pub _type: FT_Size_Request_Type,
+    pub width: FT_Long,
+    pub height: FT_Long,
+    pub horiResolution: FT_UInt,
+    pub vertResolution: FT_UInt,
 }
 
 pub type FT_Size_RequestRec = struct_FT_Size_RequestRec_;
