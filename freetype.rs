@@ -106,12 +106,12 @@ pub struct struct_FT_Bitmap_ {
 pub type FT_Bitmap = struct_FT_Bitmap_;
 
 pub struct struct_FT_Outline_ {
-    n_contours: c_short,
-    n_points: c_short,
-    points: *FT_Vector,
-    tags: *c_char,
-    contours: *c_short,
-    flags: c_int,
+    pub n_contours: c_short,
+    pub n_points: c_short,
+    pub points: *FT_Vector,
+    pub tags: *c_char,
+    pub contours: *c_short,
+    pub flags: c_int,
 }
 
 pub type FT_Outline = struct_FT_Outline_;
