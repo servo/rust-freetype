@@ -341,10 +341,10 @@ pub static FT_LOAD_NO_AUTOHINT: u32 = (0x1 << 15) as u32;
 pub type FT_Encoding = enum_FT_Encoding_;
 
 pub struct struct_FT_CharMapRec_ {
-    face: *c_void /* FT_Face */,
-    encoding: FT_Encoding,
-    platform_id: FT_UShort,
-    encoding_id: FT_UShort,
+    pub face: *c_void /* FT_Face */,
+    pub encoding: FT_Encoding,
+    pub platform_id: FT_UShort,
+    pub encoding_id: FT_UShort,
 }
 
 pub type FT_CharMapRec = struct_FT_CharMapRec_;
