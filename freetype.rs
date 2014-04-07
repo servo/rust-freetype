@@ -143,9 +143,9 @@ pub type struct_FT_RasterRec_ = c_void;
 pub type FT_Raster = *struct_FT_RasterRec_;
 
 pub struct struct_FT_Span_ {
-    x: c_short,
-    len: c_ushort,
-    coverage: c_uchar,
+    pub x: c_short,
+    pub len: c_ushort,
+    pub coverage: c_uchar,
 }
 
 pub type FT_Span = struct_FT_Span_;
