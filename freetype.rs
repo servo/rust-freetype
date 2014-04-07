@@ -61,10 +61,10 @@ pub struct struct_FT_Vector_ {
 pub type FT_Vector = struct_FT_Vector_;
 
 pub struct struct_FT_BBox_ {
-    xMin: FT_Pos,
-    yMin: FT_Pos,
-    xMax: FT_Pos,
-    yMax: FT_Pos,
+    pub xMin: FT_Pos,
+    pub yMin: FT_Pos,
+    pub xMax: FT_Pos,
+    pub yMax: FT_Pos,
 }
 
 pub type FT_BBox = struct_FT_BBox_;
