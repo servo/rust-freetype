@@ -154,15 +154,15 @@ pub type FT_Raster_BitTest_Func = *u8;
 pub type FT_Raster_BitSet_Func = *u8;
 
 pub struct struct_FT_Raster_Params_ {
-    target: *FT_Bitmap,
-    source: *c_void,
-    flags: c_int,
-    gray_spans: FT_SpanFunc,
-    black_spans: FT_SpanFunc,
-    bit_test: FT_Raster_BitTest_Func,
-    bit_set: FT_Raster_BitSet_Func,
-    user: *c_void,
-    clip_box: FT_BBox,
+    pub target: *FT_Bitmap,
+    pub source: *c_void,
+    pub flags: c_int,
+    pub gray_spans: FT_SpanFunc,
+    pub black_spans: FT_SpanFunc,
+    pub bit_test: FT_Raster_BitTest_Func,
+    pub bit_set: FT_Raster_BitSet_Func,
+    pub user: *c_void,
+    pub clip_box: FT_BBox,
 }
 
 pub type FT_Raster_Params = struct_FT_Raster_Params_;
