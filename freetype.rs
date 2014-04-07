@@ -457,14 +457,14 @@ pub struct struct_FT_Parameter_ {
 pub type FT_Parameter = struct_FT_Parameter_;
 
 pub struct struct_FT_Open_Args_ {
-    flags: FT_UInt,
-    memory_base: *FT_Byte,
-    memory_size: FT_Long,
-    pathname: *FT_String,
-    stream: *c_void /* FT_Stream */,
-    driver: *c_void /* FT_Module */,
-    num_params: FT_Int,
-    params: *FT_Parameter,
+    pub flags: FT_UInt,
+    pub memory_base: *FT_Byte,
+    pub memory_size: FT_Long,
+    pub pathname: *FT_String,
+    pub stream: *c_void /* FT_Stream */,
+    pub driver: *c_void /* FT_Module */,
+    pub num_params: FT_Int,
+    pub params: *FT_Parameter,
 }
 
 pub type FT_Open_Args = struct_FT_Open_Args_;
