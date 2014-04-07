@@ -25,10 +25,10 @@ pub type FT_Free_Func = *u8;
 pub type FT_Realloc_Func = *u8;
 
 pub struct struct_FT_MemoryRec_ {
-    user: *c_void,
-    alloc: FT_Alloc_Func,
-    free: FT_Free_Func,
-    realloc: FT_Realloc_Func,
+    pub user: *c_void,
+    pub alloc: FT_Alloc_Func,
+    pub free: FT_Free_Func,
+    pub realloc: FT_Realloc_Func,
 }
 
 pub type FT_Stream = *struct_FT_StreamRec_;
