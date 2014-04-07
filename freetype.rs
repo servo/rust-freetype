@@ -275,11 +275,11 @@ pub struct struct_FT_Glyph_Metrics_ {
 pub type FT_Glyph_Metrics = struct_FT_Glyph_Metrics_;
 
 pub struct struct_FT_Bitmap_Size_ {
-    height: FT_Short,
-    width: FT_Short,
-    size: FT_Pos,
-    x_ppem: FT_Pos,
-    y_ppem: FT_Pos,
+    pub height: FT_Short,
+    pub width: FT_Short,
+    pub size: FT_Pos,
+    pub x_ppem: FT_Pos,
+    pub y_ppem: FT_Pos,
 }
 
 pub type FT_Bitmap_Size = struct_FT_Bitmap_Size_;
