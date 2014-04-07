@@ -450,8 +450,8 @@ pub struct struct_FT_GlyphSlotRec_ {
 pub type FT_GlyphSlotRec = struct_FT_GlyphSlotRec_;
 
 pub struct struct_FT_Parameter_ {
-    tag: FT_ULong,
-    data: FT_Pointer,
+    pub tag: FT_ULong,
+    pub data: FT_Pointer,
 }
 
 pub type FT_Parameter = struct_FT_Parameter_;
