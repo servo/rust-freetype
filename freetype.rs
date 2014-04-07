@@ -221,10 +221,10 @@ pub struct struct_FT_UnitVector_ {
 pub type FT_UnitVector = struct_FT_UnitVector_;
 
 pub struct struct_FT_Matrix_ {
-    xx: FT_Fixed,
-    xy: FT_Fixed,
-    yx: FT_Fixed,
-    yy: FT_Fixed,
+    pub xx: FT_Fixed,
+    pub xy: FT_Fixed,
+    pub yx: FT_Fixed,
+    pub yy: FT_Fixed,
 }
 
 pub type FT_Matrix = struct_FT_Matrix_;
