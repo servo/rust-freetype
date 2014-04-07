@@ -395,14 +395,14 @@ pub type struct_FT_Size_InternalRec_ = c_void;
 pub type FT_Size_Internal = *struct_FT_Size_InternalRec_;
 
 pub struct struct_FT_Size_Metrics_ {
-    x_ppem: FT_UShort,
-    y_ppem: FT_UShort,
-    x_scale: FT_Fixed,
-    y_scale: FT_Fixed,
-    ascender: FT_Pos,
-    descender: FT_Pos,
-    height: FT_Pos,
-    max_advance: FT_Pos,
+    pub x_ppem: FT_UShort,
+    pub y_ppem: FT_UShort,
+    pub x_scale: FT_Fixed,
+    pub y_scale: FT_Fixed,
+    pub ascender: FT_Pos,
+    pub descender: FT_Pos,
+    pub height: FT_Pos,
+    pub max_advance: FT_Pos,
 }
 
 pub type FT_Size_Metrics = struct_FT_Size_Metrics_;
