@@ -93,14 +93,14 @@ pub static FT_PIXEL_MODE_MAX: u32 = 7_u32;
 pub type FT_Pixel_Mode = enum_FT_Pixel_Mode_;
 
 pub struct struct_FT_Bitmap_ {
-    rows: c_int,
-    width: c_int,
-    pitch: c_int,
-    buffer: *c_uchar,
-    num_grays: c_short,
-    pixel_mode: c_char,
-    palette_mode: c_char,
-    palette: *c_void,
+    pub rows: c_int,
+    pub width: c_int,
+    pub pitch: c_int,
+    pub buffer: *c_uchar,
+    pub num_grays: c_short,
+    pub pixel_mode: c_char,
+    pub palette_mode: c_char,
+    pub palette: *c_void,
 }
 
 pub type FT_Bitmap = struct_FT_Bitmap_;
