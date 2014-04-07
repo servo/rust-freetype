@@ -38,16 +38,16 @@ pub type FT_Stream_IoFunc = *u8;
 pub type FT_Stream_CloseFunc = *u8;
 
 pub struct struct_FT_StreamRec_ {
-    base: *c_uchar,
-    size: c_ulong,
-    pos: c_ulong,
-    descriptor: FT_StreamDesc,
-    pathname: FT_StreamDesc,
-    read: FT_Stream_IoFunc,
-    close: FT_Stream_CloseFunc,
-    memory: *c_void /* FT_Memory */,
-    cursor: *c_uchar,
-    limit: *c_uchar,
+    pub base: *c_uchar,
+    pub size: c_ulong,
+    pub pos: c_ulong,
+    pub descriptor: FT_StreamDesc,
+    pub pathname: FT_StreamDesc,
+    pub read: FT_Stream_IoFunc,
+    pub close: FT_Stream_CloseFunc,
+    pub memory: *c_void /* FT_Memory */,
+    pub cursor: *c_uchar,
+    pub limit: *c_uchar,
 }
 
 pub type FT_StreamRec = struct_FT_StreamRec_;
