@@ -238,8 +238,8 @@ pub type FT_Data = struct_FT_Data_;
 pub type FT_Generic_Finalizer = *u8;
 
 pub struct struct_FT_Generic_ {
-    data: *c_void,
-    finalizer: FT_Generic_Finalizer,
+    pub data: *c_void,
+    pub finalizer: FT_Generic_Finalizer,
 }
 
 pub type FT_Generic = struct_FT_Generic_;
