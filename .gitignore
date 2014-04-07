@@ -1,3 +1,4 @@
 *.dummy
 *.rlib
+*.so
 Makefile
