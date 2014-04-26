@@ -12,40 +12,40 @@
 use freetype::{FT_UShort, FT_Short, FT_ULong, FT_Byte};
 
 pub struct TT_OS2 {
-    version: FT_UShort,
-    xAvgCharWidth: FT_Short,
-    usWeightClass: FT_UShort,
-    usWidthClass: FT_UShort,
-    fsType: FT_Short,
-    ySubscriptXSize: FT_Short,
-    ySubscriptYSize: FT_Short,
-    ySubscriptXOffset: FT_Short,
-    ySubscriptYOffset: FT_Short,
-    ySuperscriptXSize: FT_Short,
-    ySuperscriptYSize: FT_Short,
-    ySuperscriptXOffset: FT_Short,
-    ySuperscriptYOffset: FT_Short,
-    yStrikeoutSize: FT_Short,
-    yStrikeoutPosition: FT_Short,
-    sFamilyClass: FT_Short,
+    pub version: FT_UShort,
+    pub xAvgCharWidth: FT_Short,
+    pub usWeightClass: FT_UShort,
+    pub usWidthClass: FT_UShort,
+    pub fsType: FT_Short,
+    pub ySubscriptXSize: FT_Short,
+    pub ySubscriptYSize: FT_Short,
+    pub ySubscriptXOffset: FT_Short,
+    pub ySubscriptYOffset: FT_Short,
+    pub ySuperscriptXSize: FT_Short,
+    pub ySuperscriptYSize: FT_Short,
+    pub ySuperscriptXOffset: FT_Short,
+    pub ySuperscriptYOffset: FT_Short,
+    pub yStrikeoutSize: FT_Short,
+    pub yStrikeoutPosition: FT_Short,
+    pub sFamilyClass: FT_Short,
 
-    panose: [FT_Byte, ..10],
+    pub panose: [FT_Byte, ..10],
 
-    ulUnicodeRange1: FT_ULong, /* Bits 0-31   */
-    ulUnicodeRange2: FT_ULong, /* Bits 32-63  */
-    ulUnicodeRange3: FT_ULong, /* Bits 64-95  */
-    ulUnicodeRange4: FT_ULong, /* Bits 96-127 */
+    pub ulUnicodeRange1: FT_ULong, /* Bits 0-31   */
+    pub ulUnicodeRange2: FT_ULong, /* Bits 32-63  */
+    pub ulUnicodeRange3: FT_ULong, /* Bits 64-95  */
+    pub ulUnicodeRange4: FT_ULong, /* Bits 96-127 */
 
     /* only version 1 tables */
 
-    ulCodePageRange1: FT_ULong, /* Bits 0-31  */
-    ulCodePageRange2: FT_ULong, /* Bits 32-63 */
+    pub ulCodePageRange1: FT_ULong, /* Bits 0-31  */
+    pub ulCodePageRange2: FT_ULong, /* Bits 32-63 */
 
     /* only version 2 tables */
 
-    sxHeight: FT_Short,
-    sCapHeight: FT_Short,
-    usDefaultChar: FT_UShort,
-    usBreakChar: FT_UShort,
-    usMaxContext: FT_UShort,
+    pub sxHeight: FT_Short,
+    pub sCapHeight: FT_Short,
+    pub usDefaultChar: FT_UShort,
+    pub usBreakChar: FT_UShort,
+    pub usMaxContext: FT_UShort,
 }
