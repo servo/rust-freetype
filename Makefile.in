@@ -2,6 +2,7 @@ VPATH=%VPATH%
 
 RUSTC ?= rustc
 RUSTFLAGS ?=
+EXT_DEPS ?=
 
 ifeq ($(CFG_OSTYPE),linux-androideabi)
 RUSTFLAGS += -L./../../android/libfreetype2/.libs
@@ -12,7 +13,7 @@ RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
 .PHONY: all clean
 all:	librustfreetype.dummy
 
-librustfreetype.dummy: freetype.rc $(RUST_SRC)
+librustfreetype.dummy: freetype.rc $(RUST_SRC) $(EXT_DEPS)
 	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
 	touch $@
 
