@@ -20,9 +20,9 @@ pub type FT_Fast = c_int;
 pub type FT_UFast = c_uint;
 
 pub type FT_Memory = *struct_FT_MemoryRec_;
-pub type FT_Alloc_Func = *u8;
-pub type FT_Free_Func = *u8;
-pub type FT_Realloc_Func = *u8;
+pub type FT_Alloc_Func = extern fn(mem: FT_Memory, size: c_long) -> *c_void;
+pub type FT_Free_Func = extern fn(mem: FT_Memory, block: *c_void);
+pub type FT_Realloc_Func = extern fn(mem: FT_Memory, cur_size: c_long, new_size: c_long, block: *c_void) -> *c_void;
 
 pub struct struct_FT_MemoryRec_ {
     pub user: *c_void,
@@ -626,6 +626,10 @@ pub static FT_Err_Max: u32 = 187_u32;
 extern {
 
 pub fn FT_Init_FreeType(alibrary: *FT_Library) -> FT_Error;
+
+pub fn FT_New_Library(memory: FT_Memory, alibrary: *FT_Library) -> FT_Error;
+
+pub fn FT_Add_Default_Modules(library: FT_Library);
 
 pub fn FT_Done_FreeType(library: FT_Library) -> FT_Error;
 
