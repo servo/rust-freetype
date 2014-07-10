@@ -19,35 +19,35 @@ pub type FT_UInt32 = c_uint;
 pub type FT_Fast = c_int;
 pub type FT_UFast = c_uint;
 
-pub type FT_Memory = *struct_FT_MemoryRec_;
-pub type FT_Alloc_Func = extern fn(mem: FT_Memory, size: c_long) -> *c_void;
-pub type FT_Free_Func = extern fn(mem: FT_Memory, block: *c_void);
-pub type FT_Realloc_Func = extern fn(mem: FT_Memory, cur_size: c_long, new_size: c_long, block: *c_void) -> *c_void;
+pub type FT_Memory = *mut struct_FT_MemoryRec_;
+pub type FT_Alloc_Func = extern fn(mem: FT_Memory, size: c_long) -> *mut c_void;
+pub type FT_Free_Func = extern fn(mem: FT_Memory, block: *mut c_void);
+pub type FT_Realloc_Func = extern fn(mem: FT_Memory, cur_size: c_long, new_size: c_long, block: *mut c_void) -> *mut c_void;
 
 pub struct struct_FT_MemoryRec_ {
-    pub user: *c_void,
+    pub user: *mut c_void,
     pub alloc: FT_Alloc_Func,
     pub free: FT_Free_Func,
     pub realloc: FT_Realloc_Func,
 }
 
-pub type FT_Stream = *struct_FT_StreamRec_;
+pub type FT_Stream = *mut struct_FT_StreamRec_;
 pub type union_FT_StreamDesc_ = c_void /* FIXME: union type */;
 pub type FT_StreamDesc = union_FT_StreamDesc_;
-pub type FT_Stream_IoFunc = *u8;
-pub type FT_Stream_CloseFunc = *u8;
+pub type FT_Stream_IoFunc = *mut u8;
+pub type FT_Stream_CloseFunc = *mut u8;
 
 pub struct struct_FT_StreamRec_ {
-    pub base: *c_uchar,
+    pub base: *mut c_uchar,
     pub size: c_ulong,
     pub pos: c_ulong,
     pub descriptor: FT_StreamDesc,
     pub pathname: FT_StreamDesc,
     pub read: FT_Stream_IoFunc,
     pub close: FT_Stream_CloseFunc,
-    pub memory: *c_void /* FT_Memory */,
-    pub cursor: *c_uchar,
-    pub limit: *c_uchar,
+    pub memory: *mut c_void /* FT_Memory */,
+    pub cursor: *mut c_uchar,
+    pub limit: *mut c_uchar,
 }
 
 pub type FT_StreamRec = struct_FT_StreamRec_;
@@ -96,11 +96,11 @@ pub struct struct_FT_Bitmap_ {
     pub rows: c_int,
     pub width: c_int,
     pub pitch: c_int,
-    pub buffer: *c_uchar,
+    pub buffer: *mut c_uchar,
     pub num_grays: c_short,
     pub pixel_mode: c_char,
     pub palette_mode: c_char,
-    pub palette: *c_void,
+    pub palette: *mut c_void,
 }
 
 pub type FT_Bitmap = struct_FT_Bitmap_;
@@ -108,17 +108,17 @@ pub type FT_Bitmap = struct_FT_Bitmap_;
 pub struct struct_FT_Outline_ {
     pub n_contours: c_short,
     pub n_points: c_short,
-    pub points: *FT_Vector,
-    pub tags: *c_char,
-    pub contours: *c_short,
+    pub points: *mut FT_Vector,
+    pub tags: *mut c_char,
+    pub contours: *mut c_short,
     pub flags: c_int,
 }
 
 pub type FT_Outline = struct_FT_Outline_;
-pub type FT_Outline_MoveToFunc = *u8;
-pub type FT_Outline_LineToFunc = *u8;
-pub type FT_Outline_ConicToFunc = *u8;
-pub type FT_Outline_CubicToFunc = *u8;
+pub type FT_Outline_MoveToFunc = *mut u8;
+pub type FT_Outline_LineToFunc = *mut u8;
+pub type FT_Outline_ConicToFunc = *mut u8;
+pub type FT_Outline_CubicToFunc = *mut u8;
 
 pub struct struct_FT_Outline_Funcs_ {
     pub move_to: FT_Outline_MoveToFunc,
@@ -140,7 +140,7 @@ pub static FT_GLYPH_FORMAT_PLOTTER: u32 = 1886154612_u32;
 
 pub type FT_Glyph_Format = enum_FT_Glyph_Format_;
 pub type struct_FT_RasterRec_ = c_void;
-pub type FT_Raster = *struct_FT_RasterRec_;
+pub type FT_Raster = *mut struct_FT_RasterRec_;
 
 pub struct struct_FT_Span_ {
     pub x: c_short,
@@ -149,28 +149,28 @@ pub struct struct_FT_Span_ {
 }
 
 pub type FT_Span = struct_FT_Span_;
-pub type FT_SpanFunc = *u8;
-pub type FT_Raster_BitTest_Func = *u8;
-pub type FT_Raster_BitSet_Func = *u8;
+pub type FT_SpanFunc = *mut u8;
+pub type FT_Raster_BitTest_Func = *mut u8;
+pub type FT_Raster_BitSet_Func = *mut u8;
 
 pub struct struct_FT_Raster_Params_ {
-    pub target: *FT_Bitmap,
-    pub source: *c_void,
+    pub target: *const FT_Bitmap,
+    pub source: *const c_void,
     pub flags: c_int,
     pub gray_spans: FT_SpanFunc,
     pub black_spans: FT_SpanFunc,
     pub bit_test: FT_Raster_BitTest_Func,
     pub bit_set: FT_Raster_BitSet_Func,
-    pub user: *c_void,
+    pub user: *mut c_void,
     pub clip_box: FT_BBox,
 }
 
 pub type FT_Raster_Params = struct_FT_Raster_Params_;
-pub type FT_Raster_NewFunc = *u8;
-pub type FT_Raster_DoneFunc = *u8;
-pub type FT_Raster_ResetFunc = *u8;
-pub type FT_Raster_SetModeFunc = *u8;
-pub type FT_Raster_RenderFunc = *u8;
+pub type FT_Raster_NewFunc = *mut u8;
+pub type FT_Raster_DoneFunc = *mut u8;
+pub type FT_Raster_ResetFunc = *mut u8;
+pub type FT_Raster_SetModeFunc = *mut u8;
+pub type FT_Raster_RenderFunc = *mut u8;
 
 pub struct struct_FT_Raster_Funcs_ {
     pub glyph_format: FT_Glyph_Format,
@@ -187,7 +187,7 @@ pub type FT_FWord = c_short;
 pub type FT_UFWord = c_ushort;
 pub type FT_Char = c_char;
 pub type FT_Byte = c_uchar;
-pub type FT_Bytes = *FT_Byte;
+pub type FT_Bytes = *const FT_Byte;
 pub type FT_Tag = FT_UInt32;
 pub type FT_String = c_char;
 pub type FT_Short = c_short;
@@ -209,7 +209,7 @@ impl FTErrorMethods for FT_Error {
     fn succeeded(&self) -> bool { *self == 0 as FT_Error }
 }
 
-pub type FT_Pointer = *c_void;
+pub type FT_Pointer = *mut c_void;
 pub type FT_Offset = size_t;
 pub type FT_PtrDist = ptrdiff_t;
 
@@ -230,33 +230,33 @@ pub struct struct_FT_Matrix_ {
 pub type FT_Matrix = struct_FT_Matrix_;
 
 pub struct struct_FT_Data_ {
-    pub pointer: *FT_Byte,
+    pub pointer: *const FT_Byte,
     pub length: FT_Int,
 }
 
 pub type FT_Data = struct_FT_Data_;
-pub type FT_Generic_Finalizer = *u8;
+pub type FT_Generic_Finalizer = *mut u8;
 
 pub struct struct_FT_Generic_ {
-    pub data: *c_void,
+    pub data: *mut c_void,
     pub finalizer: FT_Generic_Finalizer,
 }
 
 pub type FT_Generic = struct_FT_Generic_;
-pub type FT_ListNode = *struct_FT_ListNodeRec_;
-pub type FT_List = *struct_FT_ListRec_;
+pub type FT_ListNode = *mut struct_FT_ListNodeRec_;
+pub type FT_List = *mut struct_FT_ListRec_;
 
 pub struct struct_FT_ListNodeRec_ {
-    pub prev: *c_void /* FT_ListNode */,
-    pub next: *c_void /* FT_ListNode */,
-    pub data: *c_void,
+    pub prev: *mut c_void /* FT_ListNode */,
+    pub next: *mut c_void /* FT_ListNode */,
+    pub data: *mut c_void,
 }
 
 pub type FT_ListNodeRec = struct_FT_ListNodeRec_;
 
 pub struct struct_FT_ListRec_ {
-    pub head: *c_void /* FT_ListNode */,
-    pub tail: *c_void /* FT_ListNode */,
+    pub head: *mut c_void /* FT_ListNode */,
+    pub tail: *mut c_void /* FT_ListNode */,
 }
 
 pub type FT_ListRec = struct_FT_ListRec_;
@@ -285,21 +285,21 @@ pub struct struct_FT_Bitmap_Size_ {
 pub type FT_Bitmap_Size = struct_FT_Bitmap_Size_;
 
 pub type struct_FT_LibraryRec_ = c_void;
-pub type FT_Library = *struct_FT_LibraryRec_;
+pub type FT_Library = *mut struct_FT_LibraryRec_;
 
 pub type struct_FT_ModuleRec_ = c_void;
-pub type FT_Module = *struct_FT_ModuleRec_;
+pub type FT_Module = *mut struct_FT_ModuleRec_;
 
 pub type struct_FT_DriverRec_ = c_void;
-pub type FT_Driver = *struct_FT_DriverRec_;
+pub type FT_Driver = *mut struct_FT_DriverRec_;
 
 pub type struct_FT_RendererRec_ = c_void;
-pub type FT_Renderer = *struct_FT_RendererRec_;
+pub type FT_Renderer = *mut struct_FT_RendererRec_;
 
-pub type FT_Face = *struct_FT_FaceRec_;
-pub type FT_Size = *struct_FT_SizeRec_;
-pub type FT_GlyphSlot = *struct_FT_GlyphSlotRec_;
-pub type FT_CharMap = *struct_FT_CharMapRec_;
+pub type FT_Face = *mut struct_FT_FaceRec_;
+pub type FT_Size = *mut struct_FT_SizeRec_;
+pub type FT_GlyphSlot = *mut struct_FT_GlyphSlotRec_;
+pub type FT_CharMap = *mut struct_FT_CharMapRec_;
 
 pub type enum_FT_Encoding_ = c_uint;
 pub static FT_ENCODING_NONE: u32 = 0_u32;
@@ -341,7 +341,7 @@ pub static FT_LOAD_NO_AUTOHINT: u32 = (0x1 << 15) as u32;
 pub type FT_Encoding = enum_FT_Encoding_;
 
 pub struct struct_FT_CharMapRec_ {
-    pub face: *c_void /* FT_Face */,
+    pub face: *mut c_void /* FT_Face */,
     pub encoding: FT_Encoding,
     pub platform_id: FT_UShort,
     pub encoding_id: FT_UShort,
@@ -350,7 +350,7 @@ pub struct struct_FT_CharMapRec_ {
 pub type FT_CharMapRec = struct_FT_CharMapRec_;
 
 pub type struct_FT_Face_InternalRec_ = c_void;
-pub type FT_Face_Internal = *struct_FT_Face_InternalRec_;
+pub type FT_Face_Internal = *mut struct_FT_Face_InternalRec_;
 
 pub static FT_STYLE_FLAG_ITALIC: FT_Long = (1 << 0);
 pub static FT_STYLE_FLAG_BOLD: FT_Long = (1 << 1);
@@ -361,12 +361,12 @@ pub struct struct_FT_FaceRec_ {
     pub face_flags: FT_Long,
     pub style_flags: FT_Long,
     pub num_glyphs: FT_Long,
-    pub family_name: *FT_String,
-    pub style_name: *FT_String,
+    pub family_name: *mut FT_String,
+    pub style_name: *mut FT_String,
     pub num_fixed_sizes: FT_Int,
-    pub available_sizes: *FT_Bitmap_Size,
+    pub available_sizes: *mut FT_Bitmap_Size,
     pub num_charmaps: FT_Int,
-    pub charmaps: **c_void /* FT_CharMap */,
+    pub charmaps: *mut *mut c_void /* FT_CharMap */,
     pub generic: FT_Generic,
     pub bbox: FT_BBox,
     pub units_per_EM: FT_UShort,
@@ -377,22 +377,22 @@ pub struct struct_FT_FaceRec_ {
     pub max_advance_height: FT_Short,
     pub underline_position: FT_Short,
     pub underline_thickness: FT_Short,
-    pub glyph: *c_void /* FT_GlyphSlot */,
-    pub size: *c_void /* FT_Size */,
-    pub charmap: *c_void /* FT_CharMap */,
-    pub driver: *c_void /* FT_Driver */,
-    pub memory: *c_void /* FT_Memory */,
-    pub stream: *c_void /* FT_Stream */,
+    pub glyph: *mut c_void /* FT_GlyphSlot */,
+    pub size: *mut c_void /* FT_Size */,
+    pub charmap: *mut c_void /* FT_CharMap */,
+    pub driver: *mut c_void /* FT_Driver */,
+    pub memory: *mut c_void /* FT_Memory */,
+    pub stream: *mut c_void /* FT_Stream */,
     pub sizes_list: FT_ListRec,
     pub autohint: FT_Generic,
-    pub extensions: *c_void,
-    pub internal: *c_void /* FT_Face_Internal */,
+    pub extensions: *mut c_void,
+    pub internal: *mut c_void /* FT_Face_Internal */,
 }
 
 pub type FT_FaceRec = struct_FT_FaceRec_;
 
 pub type struct_FT_Size_InternalRec_ = c_void;
-pub type FT_Size_Internal = *struct_FT_Size_InternalRec_;
+pub type FT_Size_Internal = *mut struct_FT_Size_InternalRec_;
 
 pub struct struct_FT_Size_Metrics_ {
     pub x_ppem: FT_UShort,
@@ -408,24 +408,24 @@ pub struct struct_FT_Size_Metrics_ {
 pub type FT_Size_Metrics = struct_FT_Size_Metrics_;
 
 pub struct struct_FT_SizeRec_ {
-    pub face: *c_void /* FT_Face */,
+    pub face: *mut c_void /* FT_Face */,
     pub generic: FT_Generic,
     pub metrics: FT_Size_Metrics,
-    pub internal: *c_void /* FT_Size_Internal */,
+    pub internal: *mut c_void /* FT_Size_Internal */,
 }
 
 pub type FT_SizeRec = struct_FT_SizeRec_;
 
 pub type struct_FT_SubGlyphRec_ = c_void;
-pub type FT_SubGlyph = *struct_FT_SubGlyphRec_;
+pub type FT_SubGlyph = *mut struct_FT_SubGlyphRec_;
 
 pub type struct_FT_Slot_InternalRec_ = c_void;
-pub type FT_Slot_Internal = *struct_FT_Slot_InternalRec_;
+pub type FT_Slot_Internal = *mut struct_FT_Slot_InternalRec_;
 
 pub struct struct_FT_GlyphSlotRec_ {
-    pub library: *c_void /* FT_Library */,
-    pub face: *c_void /* FT_Face */,
-    pub next: *c_void /* FT_GlyphSlot */,
+    pub library: *mut c_void /* FT_Library */,
+    pub face: *mut c_void /* FT_Face */,
+    pub next: *mut c_void /* FT_GlyphSlot */,
     pub reserved: FT_UInt,
     pub generic: FT_Generic,
     pub metrics: FT_Glyph_Metrics,
@@ -438,13 +438,13 @@ pub struct struct_FT_GlyphSlotRec_ {
     pub bitmap_top: FT_Int,
     pub outline: FT_Outline,
     pub num_subglyphs: FT_UInt,
-    pub subglyphs: *c_void /* FT_SubGlyph */,
-    pub control_data: *c_void,
+    pub subglyphs: *mut c_void /* FT_SubGlyph */,
+    pub control_data: *mut c_void,
     pub control_len: c_long,
     pub lsb_delta: FT_Pos,
     pub rsb_delta: FT_Pos,
-    pub other: *c_void,
-    pub internal: *c_void /* FT_Slot_Internal */,
+    pub other: *mut c_void,
+    pub internal: *mut c_void /* FT_Slot_Internal */,
 }
 
 pub type FT_GlyphSlotRec = struct_FT_GlyphSlotRec_;
@@ -458,13 +458,13 @@ pub type FT_Parameter = struct_FT_Parameter_;
 
 pub struct struct_FT_Open_Args_ {
     pub flags: FT_UInt,
-    pub memory_base: *FT_Byte,
+    pub memory_base: *const FT_Byte,
     pub memory_size: FT_Long,
-    pub pathname: *FT_String,
-    pub stream: *c_void /* FT_Stream */,
-    pub driver: *c_void /* FT_Module */,
+    pub pathname: *mut FT_String,
+    pub stream: *mut c_void /* FT_Stream */,
+    pub driver: *mut c_void /* FT_Module */,
     pub num_params: FT_Int,
-    pub params: *FT_Parameter,
+    pub params: *mut FT_Parameter,
 }
 
 pub type FT_Open_Args = struct_FT_Open_Args_;
@@ -488,7 +488,7 @@ pub struct struct_FT_Size_RequestRec_ {
 }
 
 pub type FT_Size_RequestRec = struct_FT_Size_RequestRec_;
-pub type FT_Size_Request = *struct_FT_Size_RequestRec_;
+pub type FT_Size_Request = *mut struct_FT_Size_RequestRec_;
 
 pub type enum_FT_Render_Mode_ = c_uint;
 pub static FT_RENDER_MODE_NORMAL: u32 = 0_u32;
@@ -625,23 +625,23 @@ pub static FT_Err_Max: u32 = 187_u32;
 #[link(name="freetype")]
 extern {
 
-pub fn FT_Init_FreeType(alibrary: *FT_Library) -> FT_Error;
+pub fn FT_Init_FreeType(alibrary: *mut FT_Library) -> FT_Error;
 
-pub fn FT_New_Library(memory: FT_Memory, alibrary: *FT_Library) -> FT_Error;
+pub fn FT_New_Library(memory: FT_Memory, alibrary: *mut FT_Library) -> FT_Error;
 
 pub fn FT_Add_Default_Modules(library: FT_Library);
 
 pub fn FT_Done_FreeType(library: FT_Library) -> FT_Error;
 
-pub fn FT_New_Face(library: FT_Library, filepathname: *c_char, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
+pub fn FT_New_Face(library: FT_Library, filepathname: *const c_char, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
-pub fn FT_New_Memory_Face(library: FT_Library, file_base: *FT_Byte, file_size: FT_Long, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
+pub fn FT_New_Memory_Face(library: FT_Library, file_base: *const FT_Byte, file_size: FT_Long, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
-pub fn FT_Open_Face(library: FT_Library, args: *FT_Open_Args, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
+pub fn FT_Open_Face(library: FT_Library, args: *const FT_Open_Args, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
-pub fn FT_Attach_File(face: FT_Face, filepathname: *c_char) -> FT_Error;
+pub fn FT_Attach_File(face: FT_Face, filepathname: *const c_char) -> FT_Error;
 
-pub fn FT_Attach_Stream(face: FT_Face, parameters: *FT_Open_Args) -> FT_Error;
+pub fn FT_Attach_Stream(face: FT_Face, parameters: *mut FT_Open_Args) -> FT_Error;
 
 pub fn FT_Reference_Face(face: FT_Face) -> FT_Error;
 
@@ -659,17 +659,17 @@ pub fn FT_Load_Glyph(face: FT_Face, glyph_index: FT_UInt, load_flags: FT_Int32) 
 
 pub fn FT_Load_Char(face: FT_Face, char_code: FT_ULong, load_flags: FT_Int32) -> FT_Error;
 
-pub fn FT_Set_Transform(face: FT_Face, matrix: *FT_Matrix, delta: *FT_Vector);
+pub fn FT_Set_Transform(face: FT_Face, matrix: *mut FT_Matrix, delta: *mut FT_Vector);
 
 pub fn FT_Render_Glyph(slot: FT_GlyphSlot, render_mode: FT_Render_Mode) -> FT_Error;
 
-pub fn FT_Get_Kerning(face: FT_Face, left_glyph: FT_UInt, right_glyph: FT_UInt, kern_mode: FT_UInt, akerning: *FT_Vector) -> FT_Error;
+pub fn FT_Get_Kerning(face: FT_Face, left_glyph: FT_UInt, right_glyph: FT_UInt, kern_mode: FT_UInt, akerning: *mut FT_Vector) -> FT_Error;
 
-pub fn FT_Get_Track_Kerning(face: FT_Face, point_size: FT_Fixed, degree: FT_Int, akerning: *FT_Fixed) -> FT_Error;
+pub fn FT_Get_Track_Kerning(face: FT_Face, point_size: FT_Fixed, degree: FT_Int, akerning: *mut FT_Fixed) -> FT_Error;
 
 pub fn FT_Get_Glyph_Name(face: FT_Face, glyph_index: FT_UInt, buffer: FT_Pointer, buffer_max: FT_UInt) -> FT_Error;
 
-pub fn FT_Get_Postscript_Name(face: FT_Face) -> *c_char;
+pub fn FT_Get_Postscript_Name(face: FT_Face) -> *const c_char;
 
 pub fn FT_Select_Charmap(face: FT_Face, encoding: FT_Encoding) -> FT_Error;
 
@@ -679,13 +679,13 @@ pub fn FT_Get_Charmap_Index(charmap: FT_CharMap) -> FT_Int;
 
 pub fn FT_Get_Char_Index(face: FT_Face, charcode: FT_ULong) -> FT_UInt;
 
-pub fn FT_Get_First_Char(face: FT_Face, agindex: *FT_UInt) -> FT_ULong;
+pub fn FT_Get_First_Char(face: FT_Face, agindex: *mut FT_UInt) -> FT_ULong;
 
-pub fn FT_Get_Next_Char(face: FT_Face, char_code: FT_ULong, agindex: *FT_UInt) -> FT_ULong;
+pub fn FT_Get_Next_Char(face: FT_Face, char_code: FT_ULong, agindex: *mut FT_UInt) -> FT_ULong;
 
-pub fn FT_Get_Name_Index(face: FT_Face, glyph_name: *FT_String) -> FT_UInt;
+pub fn FT_Get_Name_Index(face: FT_Face, glyph_name: *mut FT_String) -> FT_UInt;
 
-pub fn FT_Get_SubGlyph_Info(glyph: FT_GlyphSlot, sub_index: FT_UInt, p_index: *FT_Int, p_flags: *FT_UInt, p_arg1: *FT_Int, p_arg2: *FT_Int, p_transform: *FT_Matrix) -> FT_Error;
+pub fn FT_Get_SubGlyph_Info(glyph: FT_GlyphSlot, sub_index: FT_UInt, p_index: *mut FT_Int, p_flags: *mut FT_UInt, p_arg1: *mut FT_Int, p_arg2: *mut FT_Int, p_transform: *mut FT_Matrix) -> FT_Error;
 
 pub fn FT_Get_FSType_Flags(face: FT_Face) -> FT_UShort;
 
@@ -693,11 +693,11 @@ pub fn FT_Face_GetCharVariantIndex(face: FT_Face, charcode: FT_ULong, variantSel
 
 pub fn FT_Face_GetCharVariantIsDefault(face: FT_Face, charcode: FT_ULong, variantSelector: FT_ULong) -> FT_Int;
 
-pub fn FT_Face_GetVariantSelectors(face: FT_Face) -> *FT_UInt32;
+pub fn FT_Face_GetVariantSelectors(face: FT_Face) -> *mut FT_UInt32;
 
-pub fn FT_Face_GetVariantsOfChar(face: FT_Face, charcode: FT_ULong) -> *FT_UInt32;
+pub fn FT_Face_GetVariantsOfChar(face: FT_Face, charcode: FT_ULong) -> *mut FT_UInt32;
 
-pub fn FT_Face_GetCharsOfVariant(face: FT_Face, variantSelector: FT_ULong) -> *FT_UInt32;
+pub fn FT_Face_GetCharsOfVariant(face: FT_Face, variantSelector: FT_ULong) -> *mut FT_UInt32;
 
 pub fn FT_MulDiv(a: FT_Long, b: FT_Long, c: FT_Long) -> FT_Long;
 
@@ -711,13 +711,13 @@ pub fn FT_CeilFix(a: FT_Fixed) -> FT_Fixed;
 
 pub fn FT_FloorFix(a: FT_Fixed) -> FT_Fixed;
 
-pub fn FT_Vector_Transform(vec: *FT_Vector, matrix: *FT_Matrix);
+pub fn FT_Vector_Transform(vec: *mut FT_Vector, matrix: *const FT_Matrix);
 
-pub fn FT_Library_Version(library: FT_Library, amajor: *FT_Int, aminor: *FT_Int, apatch: *FT_Int);
+pub fn FT_Library_Version(library: FT_Library, amajor: *mut FT_Int, aminor: *mut FT_Int, apatch: *mut FT_Int);
 
 pub fn FT_Face_CheckTrueTypePatents(face: FT_Face) -> FT_Bool;
 
 pub fn FT_Face_SetUnpatentedHinting(face: FT_Face, value: FT_Bool) -> FT_Bool;
 
-pub fn FT_Get_Sfnt_Table(face: FT_Face, tag: FT_Sfnt_Tag) -> *c_void;
+pub fn FT_Get_Sfnt_Table(face: FT_Face, tag: FT_Sfnt_Tag) -> *mut c_void;
 }
