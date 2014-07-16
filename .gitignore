@@ -2,3 +2,4 @@
 *.rlib
 *.so
 Makefile
+target

@@ -1,0 +1,22 @@
+[package]
+name = "freetype"
+version = "0.1.0"
+authors = [
+	"brson",
+	"burg",
+	"glennw",
+	"hannobraun",
+	"kmcallister",
+	"ILyoan",
+	"jdm",
+	"larsbergstrom",
+	"mbrubeck",
+	"metajack",
+	"Ms2ger",
+	"sebcrozet",
+	"yichoi"
+]
+
+[[lib]]
+name = "freetype"
+path = "src/freetype.rc"
