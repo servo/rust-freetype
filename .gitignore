@@ -3,3 +3,5 @@
 *.so
 Makefile
 /doc
+/target
+/Cargo.lock

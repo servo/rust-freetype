@@ -1,0 +1,10 @@
+[package]
+
+name = "freetype"
+version = "0.1.0"
+authors = ["The Servo Project Developers"]
+
+[lib]
+
+name = "freetype"
+crate-type = ["rlib"]
