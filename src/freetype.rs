@@ -322,21 +322,21 @@ pub static FT_ENCODING_ADOBE_LATIN_1: u32 = 1818326065_u32;
 pub static FT_ENCODING_OLD_LATIN_2: u32 = 1818326066_u32;
 pub static FT_ENCODING_APPLE_ROMAN: u32 = 1634889070_u32;
 
-pub static FT_LOAD_DEFAULT: u32 = 0x0;
-pub static FT_LOAD_NO_SCALE: u32 = 0x1u32 << 0;
-pub static FT_LOAD_NO_HINTING: u32 = 0x1u32 << 1;
-pub static FT_LOAD_RENDER: u32 = 0x1u32 << 2;
-pub static FT_LOAD_NO_BITMAP: u32 = 0x1u32 << 3;
-pub static FT_LOAD_VERTICAL_LAYOUT: u32 = 0x1u32 << 4;
-pub static FT_LOAD_FORCE_AUTOHINT: u32 = 0x1u32 << 5;
-pub static FT_LOAD_CROP_BITMAP: u32 = 0x1u32 << 6;
-pub static FT_LOAD_PENDANTIC: u32 = 0x1u32 << 7;
-pub static FT_LOAD_IGNORE_GLOBAL_ADVANCE_WIDTH: u32 = 0x1u32 << 9;
-pub static FT_LOAD_NO_RECURSE: u32 = 0x1u32 << 10;
-pub static FT_LOAD_IGNORE_TRANSFORM: u32 = 0x1u32 << 11;
-pub static FT_LOAD_MONOCHROME: u32 = 0x1u32 << 12;
-pub static FT_LOAD_LINEAR_DESIGN: u32 = 0x1u32 << 13;
-pub static FT_LOAD_NO_AUTOHINT: u32 = 0x1u32 << 15;
+pub static FT_LOAD_DEFAULT: i32 = 0x0;
+pub static FT_LOAD_NO_SCALE: i32 = 0x1 << 0;
+pub static FT_LOAD_NO_HINTING: i32 = 0x1 << 1;
+pub static FT_LOAD_RENDER: i32 = 0x1 << 2;
+pub static FT_LOAD_NO_BITMAP: i32 = 0x1 << 3;
+pub static FT_LOAD_VERTICAL_LAYOUT: i32 = 0x1 << 4;
+pub static FT_LOAD_FORCE_AUTOHINT: i32 = 0x1 << 5;
+pub static FT_LOAD_CROP_BITMAP: i32 = 0x1 << 6;
+pub static FT_LOAD_PENDANTIC: i32 = 0x1 << 7;
+pub static FT_LOAD_IGNORE_GLOBAL_ADVANCE_WIDTH: i32 = 0x1 << 9;
+pub static FT_LOAD_NO_RECURSE: i32 = 0x1 << 10;
+pub static FT_LOAD_IGNORE_TRANSFORM: i32 = 0x1 << 11;
+pub static FT_LOAD_MONOCHROME: i32 = 0x1 << 12;
+pub static FT_LOAD_LINEAR_DESIGN: i32 = 0x1 << 13;
+pub static FT_LOAD_NO_AUTOHINT: i32 = 0x1 << 15;
 
 pub type FT_Encoding = enum_FT_Encoding_;
 
