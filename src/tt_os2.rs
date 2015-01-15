@@ -27,7 +27,7 @@ pub struct TT_OS2 {
     pub yStrikeoutPosition: FT_Short,
     pub sFamilyClass: FT_Short,
 
-    pub panose: [FT_Byte, ..10],
+    pub panose: [FT_Byte; 10],
 
     pub ulUnicodeRange1: FT_ULong, /* Bits 0-31   */
     pub ulUnicodeRange2: FT_ULong, /* Bits 32-63  */
