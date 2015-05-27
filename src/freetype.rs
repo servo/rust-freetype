@@ -653,6 +653,8 @@ pub fn FT_Init_FreeType(alibrary: *mut FT_Library) -> FT_Error;
 
 pub fn FT_New_Library(memory: FT_Memory, alibrary: *mut FT_Library) -> FT_Error;
 
+pub fn FT_Done_Library(library: FT_Library) -> FT_Error;
+
 pub fn FT_Add_Default_Modules(library: FT_Library);
 
 pub fn FT_Done_FreeType(library: FT_Library) -> FT_Error;
