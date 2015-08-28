@@ -746,4 +746,6 @@ pub fn FT_Face_CheckTrueTypePatents(face: FT_Face) -> FT_Bool;
 pub fn FT_Face_SetUnpatentedHinting(face: FT_Face, value: FT_Bool) -> FT_Bool;
 
 pub fn FT_Get_Sfnt_Table(face: FT_Face, tag: FT_Sfnt_Tag) -> *mut c_void;
+
+pub fn FT_Load_Sfnt_Table(face: FT_Face, tag: FT_ULong, offset: FT_Long, buffer: *mut FT_Byte, length: *mut FT_ULong) -> FT_Error;
 }
