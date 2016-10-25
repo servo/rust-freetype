@@ -646,7 +646,7 @@ pub const FT_Err_Corrupted_Font_Header: u32 = 185_u32;
 pub const FT_Err_Corrupted_Font_Glyphs: u32 = 186_u32;
 pub const FT_Err_Max: u32 = 187_u32;
 
-#[link(name="freetype")]
+#[link(name="freetype", kind="static")]
 extern {
 
 pub fn FT_Init_FreeType(alibrary: *mut FT_Library) -> FT_Error;
