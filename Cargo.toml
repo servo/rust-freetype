@@ -1,7 +1,7 @@
 [package]
 
 name = "freetype"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["The Servo Project Developers"]
 documentation = "http://doc.servo.org/freetype/"
 

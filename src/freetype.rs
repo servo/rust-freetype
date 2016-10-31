@@ -71,6 +71,15 @@ pub struct struct_FT_BBox_ {
 
 pub type FT_BBox = struct_FT_BBox_;
 
+#[repr(C)]
+pub enum FT_LcdFilter {
+    FT_LCD_FILTER_NONE    = 0,
+    FT_LCD_FILTER_DEFAULT = 1,
+    FT_LCD_FILTER_LIGHT   = 2,
+    FT_LCD_FILTER_LEGACY1 = 3,
+    FT_LCD_FILTER_LEGACY  = 16,
+}
+
 pub type enum_FT_Sfnt_Tag_ = c_uint;
 pub const ft_sfnt_head: u32 = 0_u32;
 pub const ft_sfnt_maxp: u32 = 1_u32;
@@ -663,6 +672,8 @@ pub fn FT_New_Face(library: FT_Library, filepathname: *mut c_char, face_index: F
 pub fn FT_New_Memory_Face(library: FT_Library, file_base: *const FT_Byte, file_size: FT_Long, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
 
 pub fn FT_Open_Face(library: FT_Library, args: *mut FT_Open_Args, face_index: FT_Long, aface: *mut FT_Face) -> FT_Error;
+
+pub fn FT_Library_SetLcdFilter(library: FT_Library, filter: FT_LcdFilter) -> FT_Error;
 
 pub fn FT_Attach_File(face: FT_Face, filepathname: *mut c_char) -> FT_Error;
 
