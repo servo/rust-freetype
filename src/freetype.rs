@@ -21,9 +21,9 @@ pub type FT_Memory = *mut struct_FT_MemoryRec_;
 pub type FT_Alloc_Func = extern fn(mem: FT_Memory, size: c_long) -> *mut c_void;
 pub type FT_Free_Func = extern fn(mem: FT_Memory, block: *mut c_void);
 pub type FT_Realloc_Func = extern fn(mem: FT_Memory,
-                                          cur_size: c_long,
-                                          new_size: c_long,
-                                          block: *mut c_void) -> *mut c_void;
+                                     cur_size: c_long,
+                                     new_size: c_long,
+                                     block: *mut c_void) -> *mut c_void;
 
 #[repr(C)]
 pub struct struct_FT_MemoryRec_ {
