@@ -11,5 +11,5 @@ name = "freetype"
 crate-type = ["rlib"]
 
 [dependencies]
-libc = "*"
 servo-freetype-sys = "4.0.2"
+libc = "0.2"
