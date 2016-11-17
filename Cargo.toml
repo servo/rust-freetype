@@ -1,15 +1,17 @@
 [package]
 
 name = "freetype"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["The Servo Project Developers"]
 documentation = "http://doc.servo.org/freetype/"
 
-[lib]
+[features]
+default = ["servo-freetype-sys"]
 
+[lib]
 name = "freetype"
 crate-type = ["rlib"]
 
 [dependencies]
-servo-freetype-sys = "4.0.2"
+servo-freetype-sys = { version = "4.0.2", optional = true }
 libc = "0.2"
