@@ -1,5 +1,6 @@
 [package]
-
+description = "Bindings for Freetype used by Servo"
+license = "Apache-2.0 / MIT"
 name = "freetype"
 version = "0.1.2"
 authors = ["The Servo Project Developers"]
