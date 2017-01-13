@@ -115,6 +115,14 @@ pub const FT_FSTYPE_PREVIEW_AND_PRINT_EMBEDDING: ::std::os::raw::c_uint = 4;
 pub const FT_FSTYPE_EDITABLE_EMBEDDING: ::std::os::raw::c_uint = 8;
 pub const FT_FSTYPE_NO_SUBSETTING: ::std::os::raw::c_uint = 256;
 pub const FT_FSTYPE_BITMAP_EMBEDDING_ONLY: ::std::os::raw::c_uint = 512;
+pub const FT_MODULE_FONT_DRIVER: ::std::os::raw::c_uint = 1;
+pub const FT_MODULE_RENDERER: ::std::os::raw::c_uint = 2;
+pub const FT_MODULE_HINTER: ::std::os::raw::c_uint = 4;
+pub const FT_MODULE_STYLER: ::std::os::raw::c_uint = 8;
+pub const FT_MODULE_DRIVER_SCALABLE: ::std::os::raw::c_uint = 256;
+pub const FT_MODULE_DRIVER_NO_OUTLINES: ::std::os::raw::c_uint = 512;
+pub const FT_MODULE_DRIVER_HAS_HINTER: ::std::os::raw::c_uint = 1024;
+pub const FT_MODULE_DRIVER_HINTS_LIGHTLY: ::std::os::raw::c_uint = 2048;
 pub type FT_Fast = ::std::os::raw::c_int;
 pub type FT_UFast = ::std::os::raw::c_uint;
 #[repr(C)]
@@ -1463,4 +1471,92 @@ extern "C" {
 }
 extern "C" {
     pub fn FT_Get_CMap_Format(charmap: FT_CharMap) -> FT_Long;
+}
+pub type FT_Module_Interface = FT_Pointer;
+pub type FT_Module_Constructor =
+    ::std::option::Option<unsafe extern "C" fn(module: FT_Module)
+                              -> ::std::os::raw::c_int>;
+pub type FT_Module_Destructor =
+    ::std::option::Option<unsafe extern "C" fn(module: FT_Module)>;
+pub type FT_Module_Requester =
+    ::std::option::Option<unsafe extern "C" fn(module: FT_Module,
+                                               name:
+                                                   *const ::std::os::raw::c_char)
+                              -> *mut ::std::os::raw::c_void>;
+#[repr(C)]
+#[derive(Debug, Copy)]
+pub struct FT_Module_Class_ {
+    pub module_flags: FT_ULong,
+    pub module_size: FT_Long,
+    pub module_name: *const FT_String,
+    pub module_version: FT_Fixed,
+    pub module_requires: FT_Fixed,
+    pub module_interface: *const ::std::os::raw::c_void,
+    pub module_init: FT_Module_Constructor,
+    pub module_done: FT_Module_Destructor,
+    pub get_interface: FT_Module_Requester,
+}
+#[test]
+fn bindgen_test_layout_FT_Module_Class_() {
+    assert_eq!(::std::mem::size_of::<FT_Module_Class_>() , 72usize);
+    assert_eq!(::std::mem::align_of::<FT_Module_Class_>() , 8usize);
+}
+impl Clone for FT_Module_Class_ {
+    fn clone(&self) -> Self { *self }
+}
+pub use self::FT_Module_Class_ as FT_Module_Class;
+extern "C" {
+    pub fn FT_Add_Module(library: FT_Library, clazz: *const FT_Module_Class)
+     -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Get_Module(library: FT_Library,
+                         module_name: *const ::std::os::raw::c_char)
+     -> FT_Module;
+}
+extern "C" {
+    pub fn FT_Remove_Module(library: FT_Library, module: FT_Module)
+     -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Property_Set(library: FT_Library, module_name: *const FT_String,
+                           property_name: *const FT_String,
+                           value: *const ::std::os::raw::c_void) -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Property_Get(library: FT_Library, module_name: *const FT_String,
+                           property_name: *const FT_String,
+                           value: *mut ::std::os::raw::c_void) -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Reference_Library(library: FT_Library) -> FT_Error;
+}
+extern "C" {
+    pub fn FT_New_Library(memory: FT_Memory, alibrary: *mut FT_Library)
+     -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Done_Library(library: FT_Library) -> FT_Error;
+}
+pub type FT_DebugHook_Func =
+    ::std::option::Option<unsafe extern "C" fn(arg:
+                                                   *mut ::std::os::raw::c_void)>;
+extern "C" {
+    pub fn FT_Set_Debug_Hook(library: FT_Library, hook_index: FT_UInt,
+                             debug_hook: FT_DebugHook_Func);
+}
+extern "C" {
+    pub fn FT_Add_Default_Modules(library: FT_Library);
+}
+#[repr(u32)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+pub enum FT_TrueTypeEngineType_ {
+    FT_TRUETYPE_ENGINE_TYPE_NONE = 0,
+    FT_TRUETYPE_ENGINE_TYPE_UNPATENTED = 1,
+    FT_TRUETYPE_ENGINE_TYPE_PATENTED = 2,
+}
+pub use self::FT_TrueTypeEngineType_ as FT_TrueTypeEngineType;
+extern "C" {
+    pub fn FT_Get_TrueType_Engine_Type(library: FT_Library)
+     -> FT_TrueTypeEngineType;
 }
