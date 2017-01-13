@@ -1431,3 +1431,36 @@ extern "C" {
                                               *mut ::std::os::raw::c_uchar)
      -> FT_Error;
 }
+#[repr(u32)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+pub enum FT_Sfnt_Tag_ {
+    FT_SFNT_HEAD = 0,
+    FT_SFNT_MAXP = 1,
+    FT_SFNT_OS2 = 2,
+    FT_SFNT_HHEA = 3,
+    FT_SFNT_VHEA = 4,
+    FT_SFNT_POST = 5,
+    FT_SFNT_PCLT = 6,
+    FT_SFNT_MAX = 7,
+}
+pub use self::FT_Sfnt_Tag_ as FT_Sfnt_Tag;
+extern "C" {
+    pub fn FT_Get_Sfnt_Table(face: FT_Face, tag: FT_Sfnt_Tag)
+     -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn FT_Load_Sfnt_Table(face: FT_Face, tag: FT_ULong, offset: FT_Long,
+                              buffer: *mut FT_Byte, length: *mut FT_ULong)
+     -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Sfnt_Table_Info(face: FT_Face, table_index: FT_UInt,
+                              tag: *mut FT_ULong, length: *mut FT_ULong)
+     -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Get_CMap_Language_ID(charmap: FT_CharMap) -> FT_ULong;
+}
+extern "C" {
+    pub fn FT_Get_CMap_Format(charmap: FT_CharMap) -> FT_Long;
+}
