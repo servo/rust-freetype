@@ -1410,3 +1410,24 @@ extern "C" {
     pub fn FT_Face_SetUnpatentedHinting(face: FT_Face, value: FT_Bool)
      -> FT_Bool;
 }
+#[repr(u32)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+pub enum FT_LcdFilter_ {
+    FT_LCD_FILTER_NONE = 0,
+    FT_LCD_FILTER_DEFAULT = 1,
+    FT_LCD_FILTER_LIGHT = 2,
+    FT_LCD_FILTER_LEGACY1 = 3,
+    FT_LCD_FILTER_LEGACY = 16,
+    FT_LCD_FILTER_MAX = 17,
+}
+pub use self::FT_LcdFilter_ as FT_LcdFilter;
+extern "C" {
+    pub fn FT_Library_SetLcdFilter(library: FT_Library, filter: FT_LcdFilter)
+     -> FT_Error;
+}
+extern "C" {
+    pub fn FT_Library_SetLcdFilterWeights(library: FT_Library,
+                                          weights:
+                                              *mut ::std::os::raw::c_uchar)
+     -> FT_Error;
+}
