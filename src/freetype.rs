@@ -6,6 +6,7 @@ pub type FT_Int32 = i32;
 pub type FT_UInt32 = u32;
 pub type FT_Int64= i64;
 pub type FT_UInt64= u64;
+pub use FT_Error;
 
 #[repr(C)]
 pub struct __BindgenUnionField<T>(::std::marker::PhantomData<T>);
@@ -463,7 +464,6 @@ pub type FT_ULong = ::std::os::raw::c_ulong;
 pub type FT_F2Dot14 = ::std::os::raw::c_short;
 pub type FT_F26Dot6 = ::std::os::raw::c_long;
 pub type FT_Fixed = ::std::os::raw::c_long;
-pub type FT_Error = ::std::os::raw::c_int;
 pub type FT_Pointer = *mut ::std::os::raw::c_void;
 pub type FT_Offset = usize;
 pub type FT_PtrDist = isize;
