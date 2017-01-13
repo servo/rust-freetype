@@ -189,7 +189,7 @@ fn bindgen_test_layout_FT_StreamDesc_() {
 impl Clone for FT_StreamDesc_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_StreamDesc = FT_StreamDesc_;
+pub use self::FT_StreamDesc_ as FT_StreamDesc;
 pub type FT_Stream_IoFunc =
     ::std::option::Option<unsafe extern "C" fn(stream: FT_Stream,
                                                offset:
@@ -200,7 +200,7 @@ pub type FT_Stream_IoFunc =
                               -> ::std::os::raw::c_ulong>;
 pub type FT_Stream_CloseFunc =
     ::std::option::Option<unsafe extern "C" fn(stream: FT_Stream)>;
-pub type FT_StreamRec = FT_StreamRec_;
+pub use self::FT_StreamRec_ as FT_StreamRec;
 pub type FT_Pos = ::std::os::raw::c_long;
 #[repr(C)]
 #[derive(Debug, Copy)]
@@ -216,7 +216,7 @@ fn bindgen_test_layout_FT_Vector_() {
 impl Clone for FT_Vector_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Vector = FT_Vector_;
+pub use self::FT_Vector_ as FT_Vector;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_BBox_ {
@@ -233,7 +233,7 @@ fn bindgen_test_layout_FT_BBox_() {
 impl Clone for FT_BBox_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_BBox = FT_BBox_;
+pub use self::FT_BBox_ as FT_BBox;
 #[repr(u32)]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub enum FT_Pixel_Mode_ {
@@ -247,7 +247,7 @@ pub enum FT_Pixel_Mode_ {
     FT_PIXEL_MODE_BGRA = 7,
     FT_PIXEL_MODE_MAX = 8,
 }
-pub type FT_Pixel_Mode = FT_Pixel_Mode_;
+pub use self::FT_Pixel_Mode_ as FT_Pixel_Mode;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Bitmap_ {
@@ -268,7 +268,7 @@ fn bindgen_test_layout_FT_Bitmap_() {
 impl Clone for FT_Bitmap_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Bitmap = FT_Bitmap_;
+pub use self::FT_Bitmap_ as FT_Bitmap;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Outline_ {
@@ -287,7 +287,7 @@ fn bindgen_test_layout_FT_Outline_() {
 impl Clone for FT_Outline_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Outline = FT_Outline_;
+pub use self::FT_Outline_ as FT_Outline;
 pub type FT_Outline_MoveToFunc =
     ::std::option::Option<unsafe extern "C" fn(to: *const FT_Vector,
                                                user:
@@ -329,7 +329,7 @@ fn bindgen_test_layout_FT_Outline_Funcs_() {
 impl Clone for FT_Outline_Funcs_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Outline_Funcs = FT_Outline_Funcs_;
+pub use self::FT_Outline_Funcs_ as FT_Outline_Funcs;
 #[repr(u32)]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub enum FT_Glyph_Format_ {
@@ -339,7 +339,7 @@ pub enum FT_Glyph_Format_ {
     FT_GLYPH_FORMAT_OUTLINE = 1869968492,
     FT_GLYPH_FORMAT_PLOTTER = 1886154612,
 }
-pub type FT_Glyph_Format = FT_Glyph_Format_;
+pub use self::FT_Glyph_Format_ as FT_Glyph_Format;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_RasterRec_ {
@@ -364,7 +364,7 @@ fn bindgen_test_layout_FT_Span_() {
 impl Clone for FT_Span_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Span = FT_Span_;
+pub use self::FT_Span_ as FT_Span;
 pub type FT_SpanFunc =
     ::std::option::Option<unsafe extern "C" fn(y: ::std::os::raw::c_int,
                                                count: ::std::os::raw::c_int,
@@ -403,7 +403,7 @@ fn bindgen_test_layout_FT_Raster_Params_() {
 impl Clone for FT_Raster_Params_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Raster_Params = FT_Raster_Params_;
+pub use self::FT_Raster_Params_ as FT_Raster_Params;
 pub type FT_Raster_NewFunc =
     ::std::option::Option<unsafe extern "C" fn(memory:
                                                    *mut ::std::os::raw::c_void,
@@ -446,7 +446,7 @@ fn bindgen_test_layout_FT_Raster_Funcs_() {
 impl Clone for FT_Raster_Funcs_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Raster_Funcs = FT_Raster_Funcs_;
+pub use self::FT_Raster_Funcs_ as FT_Raster_Funcs;
 pub type FT_Bool = ::std::os::raw::c_uchar;
 pub type FT_FWord = ::std::os::raw::c_short;
 pub type FT_UFWord = ::std::os::raw::c_ushort;
@@ -481,7 +481,7 @@ fn bindgen_test_layout_FT_UnitVector_() {
 impl Clone for FT_UnitVector_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_UnitVector = FT_UnitVector_;
+pub use self::FT_UnitVector_ as FT_UnitVector;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Matrix_ {
@@ -498,7 +498,7 @@ fn bindgen_test_layout_FT_Matrix_() {
 impl Clone for FT_Matrix_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Matrix = FT_Matrix_;
+pub use self::FT_Matrix_ as FT_Matrix;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Data_ {
@@ -513,7 +513,7 @@ fn bindgen_test_layout_FT_Data_() {
 impl Clone for FT_Data_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Data = FT_Data_;
+pub use self::FT_Data_ as FT_Data;
 pub type FT_Generic_Finalizer =
     ::std::option::Option<unsafe extern "C" fn(object:
                                                    *mut ::std::os::raw::c_void)>;
@@ -531,7 +531,7 @@ fn bindgen_test_layout_FT_Generic_() {
 impl Clone for FT_Generic_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Generic = FT_Generic_;
+pub use self::FT_Generic_ as FT_Generic;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_ListNodeRec_ {
@@ -563,8 +563,8 @@ impl Clone for FT_ListRec_ {
     fn clone(&self) -> Self { *self }
 }
 pub type FT_List = *mut FT_ListRec_;
-pub type FT_ListNodeRec = FT_ListNodeRec_;
-pub type FT_ListRec = FT_ListRec_;
+pub use self::FT_ListNodeRec_ as FT_ListNodeRec;
+pub use self::FT_ListRec_ as FT_ListRec;
 pub const FT_Mod_Err_Base: _bindgen_ty_19 = _bindgen_ty_19::FT_Mod_Err_Base;
 pub const FT_Mod_Err_Autofit: _bindgen_ty_19 =
     _bindgen_ty_19::FT_Mod_Err_Base;
@@ -896,7 +896,7 @@ fn bindgen_test_layout_FT_Glyph_Metrics_() {
 impl Clone for FT_Glyph_Metrics_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Glyph_Metrics = FT_Glyph_Metrics_;
+pub use self::FT_Glyph_Metrics_ as FT_Glyph_Metrics;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Bitmap_Size_ {
@@ -914,7 +914,7 @@ fn bindgen_test_layout_FT_Bitmap_Size_() {
 impl Clone for FT_Bitmap_Size_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Bitmap_Size = FT_Bitmap_Size_;
+pub use self::FT_Bitmap_Size_ as FT_Bitmap_Size;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_LibraryRec_ {
@@ -1092,8 +1092,8 @@ pub enum FT_Encoding_ {
     FT_ENCODING_OLD_LATIN_2 = 1818326066,
     FT_ENCODING_APPLE_ROMAN = 1634889070,
 }
-pub type FT_Encoding = FT_Encoding_;
-pub type FT_CharMapRec = FT_CharMapRec_;
+pub use self::FT_Encoding_ as FT_Encoding;
+pub use self::FT_CharMapRec_ as FT_CharMapRec;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Face_InternalRec_ {
@@ -1103,7 +1103,7 @@ impl Clone for FT_Face_InternalRec_ {
     fn clone(&self) -> Self { *self }
 }
 pub type FT_Face_Internal = *mut FT_Face_InternalRec_;
-pub type FT_FaceRec = FT_FaceRec_;
+pub use self::FT_FaceRec_ as FT_FaceRec;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Size_InternalRec_ {
@@ -1133,8 +1133,8 @@ fn bindgen_test_layout_FT_Size_Metrics_() {
 impl Clone for FT_Size_Metrics_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Size_Metrics = FT_Size_Metrics_;
-pub type FT_SizeRec = FT_SizeRec_;
+pub use self::FT_Size_Metrics_ as FT_Size_Metrics;
+pub use self::FT_SizeRec_ as FT_SizeRec;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_SubGlyphRec_ {
@@ -1153,7 +1153,7 @@ impl Clone for FT_Slot_InternalRec_ {
     fn clone(&self) -> Self { *self }
 }
 pub type FT_Slot_Internal = *mut FT_Slot_InternalRec_;
-pub type FT_GlyphSlotRec = FT_GlyphSlotRec_;
+pub use self::FT_GlyphSlotRec_ as FT_GlyphSlotRec;
 extern "C" {
     pub fn FT_Init_FreeType(alibrary: *mut FT_Library) -> FT_Error;
 }
@@ -1174,7 +1174,7 @@ fn bindgen_test_layout_FT_Parameter_() {
 impl Clone for FT_Parameter_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Parameter = FT_Parameter_;
+pub use self::FT_Parameter_ as FT_Parameter;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Open_Args_ {
@@ -1195,7 +1195,7 @@ fn bindgen_test_layout_FT_Open_Args_() {
 impl Clone for FT_Open_Args_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Open_Args = FT_Open_Args_;
+pub use self::FT_Open_Args_ as FT_Open_Args;
 extern "C" {
     pub fn FT_New_Face(library: FT_Library,
                        filepathname: *const ::std::os::raw::c_char,
@@ -1238,7 +1238,7 @@ pub enum FT_Size_Request_Type_ {
     FT_SIZE_REQUEST_TYPE_SCALES = 4,
     FT_SIZE_REQUEST_TYPE_MAX = 5,
 }
-pub type FT_Size_Request_Type = FT_Size_Request_Type_;
+pub use self::FT_Size_Request_Type_ as FT_Size_Request_Type;
 #[repr(C)]
 #[derive(Debug, Copy)]
 pub struct FT_Size_RequestRec_ {
@@ -1256,7 +1256,7 @@ fn bindgen_test_layout_FT_Size_RequestRec_() {
 impl Clone for FT_Size_RequestRec_ {
     fn clone(&self) -> Self { *self }
 }
-pub type FT_Size_RequestRec = FT_Size_RequestRec_;
+pub use self::FT_Size_RequestRec_ as FT_Size_RequestRec;
 pub type FT_Size_Request = *mut FT_Size_RequestRec_;
 extern "C" {
     pub fn FT_Request_Size(face: FT_Face, req: FT_Size_Request) -> FT_Error;
@@ -1292,7 +1292,7 @@ pub enum FT_Render_Mode_ {
     FT_RENDER_MODE_LCD_V = 4,
     FT_RENDER_MODE_MAX = 5,
 }
-pub type FT_Render_Mode = FT_Render_Mode_;
+pub use self::FT_Render_Mode_ as FT_Render_Mode;
 extern "C" {
     pub fn FT_Render_Glyph(slot: FT_GlyphSlot, render_mode: FT_Render_Mode)
      -> FT_Error;
@@ -1304,7 +1304,7 @@ pub enum FT_Kerning_Mode_ {
     FT_KERNING_UNFITTED = 1,
     FT_KERNING_UNSCALED = 2,
 }
-pub type FT_Kerning_Mode = FT_Kerning_Mode_;
+pub use self::FT_Kerning_Mode_ as FT_Kerning_Mode;
 extern "C" {
     pub fn FT_Get_Kerning(face: FT_Face, left_glyph: FT_UInt,
                           right_glyph: FT_UInt, kern_mode: FT_UInt,
