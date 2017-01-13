@@ -20,5 +20,6 @@
 extern crate freetype_sys;
 extern crate libc;
 
+#[allow(improper_ctypes)] // https://github.com/rust-lang/rust/issues/34798
 pub mod freetype;
 pub mod tt_os2;
