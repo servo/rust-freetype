@@ -22,7 +22,7 @@ extern crate libc;
 
 /// A wrapper over FT_Error so we can add convenience methods on it.
 #[repr(C)]
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct FT_Error(pub ::std::os::raw::c_int);
 
 impl FT_Error {
