@@ -8,12 +8,15 @@ documentation = "https://doc.servo.org/freetype/"
 repository = "https://github.com/servo/rust-freetype"
 
 [features]
-default = ["servo-freetype-sys"]
+default = ["servo-freetype-sys", "build-native-freetype"]
+# Enabling "build-native-freetype" in this crate also enables the feature with the same name in
+# the servo-freetype-sys crate.
+build-native-freetype = ["servo-freetype-sys/build-native-freetype"]
 
 [lib]
 name = "freetype"
 crate-type = ["rlib"]
 
 [dependencies]
-servo-freetype-sys = { version = "4.0.2", optional = true }
+servo-freetype-sys = { version = "4.0.2", optional = true, default-features = false }
 libc = "0.2"
