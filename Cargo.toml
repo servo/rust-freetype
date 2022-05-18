@@ -15,5 +15,5 @@ name = "freetype"
 crate-type = ["rlib"]
 
 [dependencies]
-freetype-sys = { version = "0.13.0", optional = true }
+freetype-sys = { version = "0.15", optional = true }
 libc = "0.2"
