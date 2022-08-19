@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - auto
+      - try
+  pull_request:
+
+jobs:
+  rust:
+    strategy:
+      matrix:
+        toolchain: [stable, beta, nightly]
+    name: Rust
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          override: true
+          toolchain: ${{ matrix.toolchain }}
+      - uses: actions-rs/cargo@v1
+        name: Build
+        with:
+          command: build
+      - uses: actions-rs/cargo@v1
+        name: Test
+        with:
+          command: test
+
