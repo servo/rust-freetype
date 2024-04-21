@@ -27,6 +27,6 @@ pub fn succeeded(error: FT_Error) -> bool {
     error == freetype::FT_Err_Ok as FT_Error
 }
 
-#[allow(improper_ctypes)] // https://github.com/rust-lang/rust/issues/34798
+#[deny(improper_ctypes)]
 pub mod freetype;
 pub mod tt_os2;
