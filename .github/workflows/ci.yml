@@ -12,20 +12,14 @@ jobs:
       matrix:
         toolchain: [stable, beta, nightly]
     name: Rust
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
         with:
           profile: minimal
           override: true
           toolchain: ${{ matrix.toolchain }}
-      - uses: actions-rs/cargo@v1
-        name: Build
-        with:
-          command: build
-      - uses: actions-rs/cargo@v1
-        name: Test
-        with:
-          command: test
+      - run: cargo build
+      - run: cargo test
 
