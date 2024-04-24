@@ -2499,17 +2499,8 @@ extern "C" {
      -> FT_Error;
 }
 extern "C" {
-    pub fn FT_Outline_New_Internal(memory: FT_Memory, numPoints: FT_UInt,
-                                   numContours: FT_Int,
-                                   anoutline: *mut FT_Outline) -> FT_Error;
-}
-extern "C" {
     pub fn FT_Outline_Done(library: FT_Library, outline: *mut FT_Outline)
      -> FT_Error;
-}
-extern "C" {
-    pub fn FT_Outline_Done_Internal(memory: FT_Memory,
-                                    outline: *mut FT_Outline) -> FT_Error;
 }
 extern "C" {
     pub fn FT_Outline_Check(outline: *mut FT_Outline) -> FT_Error;
