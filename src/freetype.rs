@@ -133,6 +133,7 @@ pub struct FT_MemoryRec_ {
     pub realloc: FT_Realloc_Func,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_MemoryRec_() {
     assert_eq!(::std::mem::size_of::<FT_MemoryRec_>() , 32usize , concat ! (
                "Size of: " , stringify ! ( FT_MemoryRec_ ) ));
@@ -195,6 +196,7 @@ pub struct FT_StreamRec_ {
     pub limit: *mut ::std::os::raw::c_uchar,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_StreamRec_() {
     assert_eq!(::std::mem::size_of::<FT_StreamRec_>() , 80usize , concat ! (
                "Size of: " , stringify ! ( FT_StreamRec_ ) ));
@@ -263,6 +265,7 @@ pub struct FT_StreamDesc_ {
     pub bindgen_union_field: u64,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_StreamDesc_() {
     assert_eq!(::std::mem::size_of::<FT_StreamDesc_>() , 8usize , concat ! (
                "Size of: " , stringify ! ( FT_StreamDesc_ ) ));
@@ -302,6 +305,7 @@ pub struct FT_Vector_ {
     pub y: FT_Pos,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Vector_() {
     assert_eq!(::std::mem::size_of::<FT_Vector_>() , 16usize , concat ! (
                "Size of: " , stringify ! ( FT_Vector_ ) ));
@@ -331,6 +335,7 @@ pub struct FT_BBox_ {
     pub yMax: FT_Pos,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_BBox_() {
     assert_eq!(::std::mem::size_of::<FT_BBox_>() , 32usize , concat ! (
                "Size of: " , stringify ! ( FT_BBox_ ) ));
@@ -388,6 +393,7 @@ pub struct FT_Bitmap_ {
     pub palette: *mut ::std::os::raw::c_void,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Bitmap_() {
     assert_eq!(::std::mem::size_of::<FT_Bitmap_>() , 40usize , concat ! (
                "Size of: " , stringify ! ( FT_Bitmap_ ) ));
@@ -449,6 +455,7 @@ pub struct FT_Outline_ {
     pub flags: ::std::os::raw::c_int,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Outline_() {
     assert_eq!(::std::mem::size_of::<FT_Outline_>() , 40usize , concat ! (
                "Size of: " , stringify ! ( FT_Outline_ ) ));
@@ -523,6 +530,7 @@ pub struct FT_Outline_Funcs_ {
     pub delta: FT_Pos,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Outline_Funcs_() {
     assert_eq!(::std::mem::size_of::<FT_Outline_Funcs_>() , 48usize , concat !
                ( "Size of: " , stringify ! ( FT_Outline_Funcs_ ) ));
@@ -643,6 +651,7 @@ pub struct FT_Raster_Params_ {
     pub clip_box: FT_BBox,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Raster_Params_() {
     assert_eq!(::std::mem::size_of::<FT_Raster_Params_>() , 96usize , concat !
                ( "Size of: " , stringify ! ( FT_Raster_Params_ ) ));
@@ -733,6 +742,7 @@ pub struct FT_Raster_Funcs_ {
     pub raster_done: FT_Raster_DoneFunc,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Raster_Funcs_() {
     assert_eq!(::std::mem::size_of::<FT_Raster_Funcs_>() , 48usize , concat !
                ( "Size of: " , stringify ! ( FT_Raster_Funcs_ ) ));
@@ -829,6 +839,7 @@ pub struct FT_Matrix_ {
     pub yy: FT_Fixed,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Matrix_() {
     assert_eq!(::std::mem::size_of::<FT_Matrix_>() , 32usize , concat ! (
                "Size of: " , stringify ! ( FT_Matrix_ ) ));
@@ -866,6 +877,7 @@ pub struct FT_Data_ {
     pub length: FT_Int,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Data_() {
     assert_eq!(::std::mem::size_of::<FT_Data_>() , 16usize , concat ! (
                "Size of: " , stringify ! ( FT_Data_ ) ));
@@ -896,6 +908,7 @@ pub struct FT_Generic_ {
     pub finalizer: FT_Generic_Finalizer,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Generic_() {
     assert_eq!(::std::mem::size_of::<FT_Generic_>() , 16usize , concat ! (
                "Size of: " , stringify ! ( FT_Generic_ ) ));
@@ -924,6 +937,7 @@ pub struct FT_ListNodeRec_ {
     pub data: *mut ::std::os::raw::c_void,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_ListNodeRec_() {
     assert_eq!(::std::mem::size_of::<FT_ListNodeRec_>() , 24usize , concat ! (
                "Size of: " , stringify ! ( FT_ListNodeRec_ ) ));
@@ -956,6 +970,7 @@ pub struct FT_ListRec_ {
     pub tail: FT_ListNode,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_ListRec_() {
     assert_eq!(::std::mem::size_of::<FT_ListRec_>() , 16usize , concat ! (
                "Size of: " , stringify ! ( FT_ListRec_ ) ));
@@ -1295,6 +1310,7 @@ pub struct FT_Glyph_Metrics_ {
     pub vertAdvance: FT_Pos,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Glyph_Metrics_() {
     assert_eq!(::std::mem::size_of::<FT_Glyph_Metrics_>() , 64usize , concat !
                ( "Size of: " , stringify ! ( FT_Glyph_Metrics_ ) ));
@@ -1355,6 +1371,7 @@ pub struct FT_Bitmap_Size_ {
     pub y_ppem: FT_Pos,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Bitmap_Size_() {
     assert_eq!(::std::mem::size_of::<FT_Bitmap_Size_>() , 32usize , concat ! (
                "Size of: " , stringify ! ( FT_Bitmap_Size_ ) ));
@@ -1450,6 +1467,7 @@ pub struct FT_FaceRec_ {
     pub internal: FT_Face_Internal,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_FaceRec_() {
     assert_eq!(::std::mem::size_of::<FT_FaceRec_>() , 248usize , concat ! (
                "Size of: " , stringify ! ( FT_FaceRec_ ) ));
@@ -1624,6 +1642,7 @@ pub struct FT_SizeRec_ {
     pub internal: FT_Size_Internal,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_SizeRec_() {
     assert_eq!(::std::mem::size_of::<FT_SizeRec_>() , 88usize , concat ! (
                "Size of: " , stringify ! ( FT_SizeRec_ ) ));
@@ -1681,6 +1700,7 @@ pub struct FT_GlyphSlotRec_ {
     pub internal: FT_Slot_Internal,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_GlyphSlotRec_() {
     assert_eq!(::std::mem::size_of::<FT_GlyphSlotRec_>() , 304usize , concat !
                ( "Size of: " , stringify ! ( FT_GlyphSlotRec_ ) ));
@@ -1810,6 +1830,7 @@ pub struct FT_CharMapRec_ {
     pub encoding_id: FT_UShort,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_CharMapRec_() {
     assert_eq!(::std::mem::size_of::<FT_CharMapRec_>() , 16usize , concat ! (
                "Size of: " , stringify ! ( FT_CharMapRec_ ) ));
@@ -1896,6 +1917,7 @@ pub struct FT_Size_Metrics_ {
     pub max_advance: FT_Pos,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Size_Metrics_() {
     assert_eq!(::std::mem::size_of::<FT_Size_Metrics_>() , 56usize , concat !
                ( "Size of: " , stringify ! ( FT_Size_Metrics_ ) ));
@@ -1973,6 +1995,7 @@ pub struct FT_Parameter_ {
     pub data: FT_Pointer,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Parameter_() {
     assert_eq!(::std::mem::size_of::<FT_Parameter_>() , 16usize , concat ! (
                "Size of: " , stringify ! ( FT_Parameter_ ) ));
@@ -2006,6 +2029,7 @@ pub struct FT_Open_Args_ {
     pub params: *mut FT_Parameter,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Open_Args_() {
     assert_eq!(::std::mem::size_of::<FT_Open_Args_>() , 64usize , concat ! (
                "Size of: " , stringify ! ( FT_Open_Args_ ) ));
@@ -2109,6 +2133,7 @@ pub struct FT_Size_RequestRec_ {
     pub vertResolution: FT_UInt,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Size_RequestRec_() {
     assert_eq!(::std::mem::size_of::<FT_Size_RequestRec_>() , 32usize , concat
                ! ( "Size of: " , stringify ! ( FT_Size_RequestRec_ ) ));
@@ -2377,6 +2402,7 @@ pub struct FT_Module_Class_ {
     pub get_interface: FT_Module_Requester,
 }
 #[test]
+#[cfg(target_pointer_width="64")]
 fn bindgen_test_layout_FT_Module_Class_() {
     assert_eq!(::std::mem::size_of::<FT_Module_Class_>() , 72usize , concat !
                ( "Size of: " , stringify ! ( FT_Module_Class_ ) ));
