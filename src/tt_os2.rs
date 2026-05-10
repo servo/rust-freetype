@@ -7,7 +7,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use freetype::{FT_Char, FT_UShort, FT_Short, FT_ULong, FT_Byte};
+use freetype::{FT_Byte, FT_Char, FT_Short, FT_ULong, FT_UShort};
 
 #[repr(C)]
 pub struct TT_OS2 {
@@ -47,12 +47,10 @@ pub struct TT_OS2 {
     pub usWinDescent: FT_UShort,
 
     /* only version 1 tables */
-
     pub ulCodePageRange1: FT_ULong, /* Bits 0-31  */
     pub ulCodePageRange2: FT_ULong, /* Bits 32-63 */
 
     /* only version 2 tables */
-
     pub sxHeight: FT_Short,
     pub sCapHeight: FT_Short,
     pub usDefaultChar: FT_UShort,

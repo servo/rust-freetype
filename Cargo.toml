@@ -1,6 +1,6 @@
 [package]
 name = "freetype"
-version = "0.7.2"
+version = "0.8.0"
 authors = ["The Servo Project Developers"]
 description = "Bindings for FreeType used by Servo."
 documentation = "https://docs.rs/freetype"
@@ -10,9 +10,13 @@ license = "MIT OR Apache-2.0"
 [lib]
 name = "freetype"
 crate-type = ["rlib"]
+# bindgen generate docs contain code blocks containing C-code, so we either
+# need to remove the docs, apply some filter, or disable doctests.
+# We don't have any non-generated docs anyway, so just disable them.
+doctest = false
 
 [dependencies]
-freetype-sys = { version = "0.20.1", optional = true }
+freetype-sys = { version = "0.23.0", optional = true }
 libc = "0.2"
 
 [features]
